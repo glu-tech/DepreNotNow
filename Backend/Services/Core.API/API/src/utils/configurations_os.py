@@ -1,4 +1,6 @@
 import os
+from urllib.parse import urljoin
+from urllib.request import pathname2url
 
 class ConfigurationsOS:
     def remove_files_temporary(self, path, filename, format):
@@ -23,3 +25,8 @@ class ConfigurationsOS:
                 names.append(file_name)
 
         return names
+
+    def file_path_to_url(self, filepath):
+        filename = filepath.split("merge")[1]
+        path = os.path.dirname(os.path.realpath(f"{filepath}{filename}"))
+        return urljoin('file:', pathname2url(path)) 

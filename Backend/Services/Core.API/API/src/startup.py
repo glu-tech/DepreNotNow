@@ -24,7 +24,7 @@ class Startup:
                             self.__enviroment.get_path_sounds_binaural(), self.__enviroment.get_format(), 
                             self.__sound_manage, self.__os_config)
         self.__generate_sound_service = GenerateSoundService(self.__os_config, self.__sound_config, 
-                            self.__sound_manage, self.__background, self.__binaural, self.__generate_sound_binaural)
+                            self.__sound_manage, self.__background, self.__binaural, self.__generate_sound_binaural, self.__enviroment)
 
     def get_binaural(self):
         return self.__binaural
