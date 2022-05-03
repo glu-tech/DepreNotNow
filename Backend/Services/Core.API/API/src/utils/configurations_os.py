@@ -26,7 +26,7 @@ class ConfigurationsOS:
 
         return names
 
-    def file_path_to_url(self, filepath):
+    def file_path_to_url(self, filepath, address):
         filename = filepath.split("merge")[1]
         path = os.path.dirname(os.path.realpath(f"{filepath}{filename}"))
-        return urljoin('file:', pathname2url(path)) 
+        return urljoin(f'file://{address}', pathname2url(path)) 
