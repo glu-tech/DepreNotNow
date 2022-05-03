@@ -3,6 +3,7 @@ from global_enviroment import GlobalEnviroment
 from models.background import Background
 from models.create_sound_binaural_model import CreateSoundBinauralModel
 from models.generate_binaural_sound_model import GenerateBinauralSoundModel
+from services.aws_service import AwsService
 from services.generate_sound_service import GenerateSoundService
 from utils.configurations_os import ConfigurationsOS
 from utils.configurations_sound import ConfigurationsSounds
@@ -16,6 +17,7 @@ class Startup:
         self.__os_config = ConfigurationsOS()
         self.__sound_config = ConfigurationsSounds()
         self.__sound_manage = ManagementSound(self.__os_config)
+        self.__aws_service = AwsService()
         self.__generate_sound_binaural = GenerateBinauralSoundModel(self.__sound_manage)
         self.__download_background_sounds = DownloadBackgroundSounds(self.__os_config, self.__sound_manage, self.__enviroment)
         self.__background = Background(self.__enviroment.get_path_sounds_background(), self.__sound_manage, self.__sound_config)
@@ -49,6 +51,9 @@ class Startup:
 
     def get_generate_sound_service(self):
         return self.__generate_sound_service
+
+    def get_aws_service(self):
+        return self.__aws_service
 
     def start(self):
         self.__enviroment.inicialize_pygame()
