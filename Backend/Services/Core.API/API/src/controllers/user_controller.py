@@ -6,7 +6,7 @@ from services.user_service import UserService
 
 api = Namespace('User',description="Requests to survey how many users using app and how they feel")
 user_bp:Blueprint = Blueprint('user', __name__)
-user_service = UserService(f"{os.path.dirname(os.path.realpath('__file__'))}/logs")
+user_service = UserService(f"{os.path.dirname(os.path.realpath('__file__'))}/reports")
 # logging.basicConfig(filename="logs.log", level=logging.NOTSET)
 
 @api.route('/name')
