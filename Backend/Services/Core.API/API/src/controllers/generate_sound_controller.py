@@ -35,8 +35,6 @@ class GenerateSoundController(Resource):
     @api.expect(model)
     @generate_sound_bp.route('/generate/', methods=['POST'])
     def post():
-        if (request.method == "GET"): return jsonify(), 406
-
         content = request.json
         status_code, has_error, errors = generate_sound_service.validation_form(content)
 
