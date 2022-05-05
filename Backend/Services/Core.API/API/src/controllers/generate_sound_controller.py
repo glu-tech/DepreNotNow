@@ -8,6 +8,7 @@ from helpers.management_sound import ManagementSound
 from models.background import Background
 from models.generate_sound_model import GenerateSoundModel
 from services.generate_sound_service import GenerateSoundService
+from services.logs_service import LogsService
 from startup import Startup
 
 startup:Startup = Startup()
@@ -38,12 +39,14 @@ class GenerateSoundController(Resource):
         content = request.json
         status_code, has_error, errors = generate_sound_service.validation_form(content)
 
-        if(has_error): return jsonify({
-            "status_code":status_code,
-            "url_sound":None,
-            "has_error":has_error,
-            "errors":errors
-        }), status_code
+        if(has_error): 
+            LogsService().generate_log_error(f"Capture error: {errors}")
+            return jsonify({
+                "status_code":status_code,
+                "url_sound":None,
+                "has_error":has_error,
+                "errors":errors
+            }), status_code
         
         model = GenerateSoundModel(BinauralTypes[content["typeBinaural"]].name, BackgroundTypes[content["typeBackground"]].name, content["time"])
         enviroment.set_duration(model.get_time())
@@ -53,6 +56,8 @@ class GenerateSoundController(Resource):
         filepath:str = generate_sound_service.merge_sound(model_merge_sound)
 
         file_url = aws_service.upload(filepath, filepath.split("merge/")[1])
+
+        LogsService().generate_log_info("Created binaural sound and upload for aws!")
 
         return jsonify({
             "status_code":status_code,
