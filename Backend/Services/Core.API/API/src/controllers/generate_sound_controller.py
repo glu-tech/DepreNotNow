@@ -55,7 +55,7 @@ class GenerateSoundController(Resource):
 
         filepath:str = generate_sound_service.merge_sound(model_merge_sound)
 
-        file_url = aws_service.upload(filepath, filepath.split("merge/")[1])
+        file_url = aws_service.upload(filepath, filepath.split("merge/")[1], "sounds")
 
         LogsService().generate_log_info("Created binaural sound and upload for aws!")
 
