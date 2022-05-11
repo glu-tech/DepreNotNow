@@ -23,5 +23,9 @@ api = Api(app, title='API - DepreNotNow', version='1.0', description='API to gen
 api.add_namespace(user, path=f'/user')
 api.add_namespace(sound, path=f'/sound')
 
+@app.errorhandler(404)
+def not_found(e): 
+    return make_response(jsonify({"message": e.description, "title": e.name, "status_code": 404}), 404)
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
