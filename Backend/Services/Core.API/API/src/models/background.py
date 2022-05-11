@@ -1,5 +1,5 @@
-from helpers.management_sound import ManagementSound
-from utils.configurations_sound import ConfigurationsSounds
+from ..helpers.management_sound import ManagementSound
+from ..utils.configurations_sound import ConfigurationsSounds
 
 class Background:
     def __init__(self, path_sounds_background, sound_manage:ManagementSound, sound_config:ConfigurationsSounds):

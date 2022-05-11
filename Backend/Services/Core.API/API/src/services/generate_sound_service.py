@@ -1,17 +1,17 @@
 from datetime import datetime
-from enums.background_types import BackgroundTypes
-from enums.binaural_types import BinauralTypes
-from global_enviroment import GlobalEnviroment
-from helpers.management_sound import ManagementSound
-from models.background import Background
-from models.binaural import Binaural
-from models.create_sound_binaural_model import CreateSoundBinauralModel
-from models.generate_binaural_sound_model import GenerateBinauralSoundModel
-from models.generate_sound_model import GenerateSoundModel
-from models.load_sound_background_model import LoadSoundBackgroundModel
-from models.merge_sound_model import MergeSoundModel
-from utils.configurations_os import ConfigurationsOS
-from utils.configurations_sound import ConfigurationsSounds
+from ..enums.background_types import BackgroundTypes
+from ..enums.binaural_types import BinauralTypes
+from ..global_enviroment import GlobalEnviroment
+from ..helpers.management_sound import ManagementSound
+from ..models.background import Background
+from ..models.binaural import Binaural
+from ..models.create_sound_binaural_model import CreateSoundBinauralModel
+from ..models.generate_binaural_sound_model import GenerateBinauralSoundModel
+from ..models.generate_sound_model import GenerateSoundModel
+from ..models.load_sound_background_model import LoadSoundBackgroundModel
+from ..models.merge_sound_model import MergeSoundModel
+from ..utils.configurations_os import ConfigurationsOS
+from ..utils.configurations_sound import ConfigurationsSounds
 
 class GenerateSoundService:
     def __init__(self, os_config:ConfigurationsOS, sound_config:ConfigurationsSounds, sound_manage:ManagementSound, 

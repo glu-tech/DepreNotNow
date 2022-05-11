@@ -3,9 +3,8 @@ import numpy
 import math
 import wave
 import pygame
-
-from utils.configurations_os import ConfigurationsOS
-from helpers.management_sound import ManagementSound
+from ..utils.configurations_os import ConfigurationsOS
+from ..helpers.management_sound import ManagementSound
 
 class Binaural:
     def __init__(self, bits_sound, sample_rate, channel, 

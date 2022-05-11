@@ -1,10 +1,9 @@
 import os
-
 from pytube import YouTube
 from moviepy.editor import *
-from utils.configurations_os import ConfigurationsOS
-from helpers.management_sound import ManagementSound
-from global_enviroment import GlobalEnviroment
+from .configurations_os import ConfigurationsOS
+from ..helpers.management_sound import ManagementSound
+from ..global_enviroment import GlobalEnviroment
 
 class DownloadBackgroundSounds:
     def __init__(self, os_config:ConfigurationsOS, sound_manage:ManagementSound, environment:GlobalEnviroment):

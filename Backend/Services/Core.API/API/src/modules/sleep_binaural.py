@@ -1,4 +1,4 @@
-from models.binaural import Binaural
+from ..models.binaural import Binaural
 
 class SleepBinaural(Binaural):
     def generate_binaural_sound(self, time, name_sound:str):

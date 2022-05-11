@@ -1,15 +1,15 @@
-from enums.binaural_types import BinauralTypes
-from global_enviroment import GlobalEnviroment
-from models.background import Background
-from models.create_sound_binaural_model import CreateSoundBinauralModel
-from models.generate_binaural_sound_model import GenerateBinauralSoundModel
-from services.aws_service import AwsService
-from services.generate_sound_service import GenerateSoundService
-from utils.configurations_os import ConfigurationsOS
-from utils.configurations_sound import ConfigurationsSounds
-from helpers.management_sound import ManagementSound
-from models.binaural import Binaural
-from utils.download_background_sounds import DownloadBackgroundSounds
+from .enums.binaural_types import BinauralTypes
+from .global_enviroment import GlobalEnviroment
+from .models.background import Background
+from .models.create_sound_binaural_model import CreateSoundBinauralModel
+from .models.generate_binaural_sound_model import GenerateBinauralSoundModel
+from .services.aws_service import AwsService
+from .services.generate_sound_service import GenerateSoundService
+from .utils.configurations_os import ConfigurationsOS
+from .utils.configurations_sound import ConfigurationsSounds
+from .helpers.management_sound import ManagementSound
+from .models.binaural import Binaural
+from .utils.download_background_sounds import DownloadBackgroundSounds
 
 class Startup:
     def __init__(self):
