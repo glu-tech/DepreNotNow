@@ -1,6 +1,6 @@
 import csv
 from datetime import datetime
-from ..services.aws_service import AwsService
+from services.aws_service import AwsService
 
 class UserService:
     def __init__(self, path):

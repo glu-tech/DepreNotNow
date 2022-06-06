@@ -1,7 +1,7 @@
 from abc import abstractmethod
 from typing import Any
-from .handler import Handler
-from ...models.request_handle_model import RequestHandleModel
+from filters.binaural.handler import Handler
+from models.request_handle_model import RequestHandleModel
 
 class AbstractHandler(Handler):
     _next_handler: Handler = None

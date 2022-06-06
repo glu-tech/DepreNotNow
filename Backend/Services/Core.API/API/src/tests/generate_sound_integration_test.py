@@ -1,8 +1,7 @@
-from datetime import datetime
 import json
-
+from datetime import datetime
 from re import search
-from ..app import app
+from app import app
 
 def test_generate_sound_endpoint():
     type_binaural = "calm"

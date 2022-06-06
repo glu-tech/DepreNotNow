@@ -1,6 +1,6 @@
-from .options.by_calm import CalmHandler
-from .options.by_happy import HappyHandler
-from .options.by_sleep import SleepHandler
+from filters.binaural.options.by_calm import CalmHandler
+from filters.binaural.options.by_happy import HappyHandler
+from filters.binaural.options.by_sleep import SleepHandler
 
 class HandleSet:
     def set_handle(self):

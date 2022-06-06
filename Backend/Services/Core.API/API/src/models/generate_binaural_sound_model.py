@@ -1,6 +1,6 @@
-from ..filters.binaural.handle_set import HandleSet
-from ..models.request_handle_model import RequestHandleModel
-from ..enums.binaural_types import BinauralTypes
+from filters.binaural.handle_set import HandleSet
+from models.request_handle_model import RequestHandleModel
+from enums.binaural_types import BinauralTypes
 
 class GenerateBinauralSoundModel:      
     def __init__(self, sound_manage):

@@ -1,8 +1,8 @@
 from typing import Any
-from ....enums.binaural_types import BinauralTypes
-from ..abstract_handler import AbstractHandler
-from ....models.request_handle_model import RequestHandleModel
-from ....modules.sleep_binaural import SleepBinaural
+from enums.binaural_types import BinauralTypes
+from filters.binaural.abstract_handler import AbstractHandler
+from models.request_handle_model import RequestHandleModel
+from modules.sleep_binaural import SleepBinaural
 
 class SleepHandler(AbstractHandler):
     def handle(self, request: RequestHandleModel) -> Any:

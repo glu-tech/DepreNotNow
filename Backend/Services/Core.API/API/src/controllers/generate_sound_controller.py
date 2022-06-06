@@ -1,15 +1,15 @@
 from flask_restx import Namespace, Resource, fields
 from pygame.locals import *
 from flask import jsonify, Blueprint, request
-from ..enums.background_types import BackgroundTypes
-from ..enums.binaural_types import BinauralTypes
-from ..global_enviroment import GlobalEnviroment
-from ..helpers.management_sound import ManagementSound
-from ..models.background import Background
-from ..models.generate_sound_model import GenerateSoundModel
-from ..services.generate_sound_service import GenerateSoundService
-from ..services.logs_service import LogsService
-from ..startup import Startup
+from enums.background_types import BackgroundTypes
+from enums.binaural_types import BinauralTypes
+from global_enviroment import GlobalEnviroment
+from helpers.management_sound import ManagementSound
+from models.background import Background
+from models.generate_sound_model import GenerateSoundModel
+from services.generate_sound_service import GenerateSoundService
+from services.logs_service import LogsService
+from startup import Startup
 
 startup:Startup = Startup()
 enviroment:GlobalEnviroment = startup.get_enviroment()

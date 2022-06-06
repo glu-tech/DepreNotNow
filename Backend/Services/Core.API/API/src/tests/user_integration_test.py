@@ -2,7 +2,7 @@ from datetime import datetime
 import json
 
 from re import search
-from ..app import app
+from app import app
 
 url_base = "/api/core/user"
 content_type = "application/json"

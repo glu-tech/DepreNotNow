@@ -2,8 +2,8 @@ import os
 from datetime import datetime
 from flask import Blueprint, jsonify, request
 from flask_restx import Resource, Namespace
-from ..services.logs_service import LogsService
-from ..services.user_service import UserService
+from services.logs_service import LogsService
+from services.user_service import UserService
 
 api = Namespace('User',description="Requests to survey how many users using app and how they feel")
 user_name_bp:Blueprint = Blueprint('user_name', __name__)

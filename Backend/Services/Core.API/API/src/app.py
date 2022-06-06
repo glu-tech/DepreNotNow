@@ -1,11 +1,11 @@
 from flask_restx import Api
 from pygame.locals import *
 from flask import Flask, jsonify, make_response
-from .controllers.generate_sound_controller import generate_sound_bp
-from .controllers.user_controller import user_name_bp, user_feeling_bp
-from .controllers.generate_sound_controller import api as sound
-from .controllers.user_controller import api as user
-from .startup import Startup
+from controllers.generate_sound_controller import generate_sound_bp
+from controllers.user_controller import user_name_bp, user_feeling_bp
+from controllers.generate_sound_controller import api as sound
+from controllers.user_controller import api as user
+from startup import Startup
 
 app = Flask(__name__)
 app.config["DEBUG"] = True

@@ -1,14 +1,14 @@
 from datetime import datetime
 
 from re import search
-from ..services.generate_sound_service import GenerateSoundService
-from ..startup import Startup
-from ..global_enviroment import GlobalEnviroment
-from ..helpers.management_sound import ManagementSound
-from ..models.background import Background
-from ..models.generate_sound_model import GenerateSoundModel
-from ..enums.binaural_types import BinauralTypes
-from ..enums.background_types import BackgroundTypes
+from services.generate_sound_service import GenerateSoundService
+from startup import Startup
+from global_enviroment import GlobalEnviroment
+from helpers.management_sound import ManagementSound
+from models.background import Background
+from models.generate_sound_model import GenerateSoundModel
+from enums.binaural_types import BinauralTypes
+from enums.background_types import BackgroundTypes
 
 startup:Startup = Startup()
 enviroment:GlobalEnviroment = startup.get_enviroment()
