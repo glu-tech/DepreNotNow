@@ -12,7 +12,7 @@ export function Welcome() {
   const [name, setName] = useState<string>();
 
   async function handleConfirmation(){
-    if (name !== "" || name !== undefined || name !== null){
+    if (name === "" || name === undefined || name === null){
       return Alert.alert('Me diz como chamar você 😢');
     }
     try {
