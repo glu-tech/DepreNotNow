@@ -3,11 +3,18 @@ import { ContainerSelectionSounds } from './styles';
 import ContainerScreen from '../../components/ContainerScreen';
 import { LinearGradient } from 'expo-linear-gradient';
 import TitleLabel from '../../components/TitleLabel';
+import { useNavigation } from '@react-navigation/native';
 
 export function GridMenu(props:{ title:string, children:any, visibleMenuBar:boolean, optionMenuSelected:boolean[]}) {
+  const navigation = useNavigation();
+
+  function handleGoBack(){
+    navigation.goBack();
+
+  }
   return (
     <ContainerScreen visibleMenuBar={props.visibleMenuBar} optionMenuSelected={props.optionMenuSelected}>
-      <TitleLabel text={props.title} />
+      <TitleLabel onPress={handleGoBack} text={props.title} />
 
       <LinearGradient colors={['#0c514918', '#0a1422c8']} style={{ borderRadius: 16, width: 240, height: 120, left: 72, top: 40 }} />
       <LinearGradient colors={['#0c514921', '#0a1422b3']} style={{ borderRadius: 16, width: 284, height: 148, left: 52, top: -125 }} />

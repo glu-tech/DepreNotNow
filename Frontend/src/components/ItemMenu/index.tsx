@@ -5,7 +5,7 @@ import { MaterialIcon } from "../Icon";
 export function ItemMenu(props:{leftLocate:number, nameItem:string, icon:string, selected:boolean}) {
     return (
         <Container style={{ left: props.leftLocate }}>
-            <Grid>
+            <Grid disabled={props.selected}>
                 {props.selected ? <LinearGradient colors={['rgba(12, 81, 73, 0.5)', 'rgba(12, 81, 73, 0.5)']} style={{ flex: 1, borderRadius: 70 }}>
                     <Box>
                         {props.nameItem != "Player" ?

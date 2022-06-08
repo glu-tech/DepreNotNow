@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
 
-export const Card = styled.View`
+export const Card = styled.TouchableOpacity`
     position: absolute;
     width: 358px;
     height: 170px;

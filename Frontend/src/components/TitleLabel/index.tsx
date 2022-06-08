@@ -2,10 +2,15 @@ import React from 'react';
 import { ArrowBack, GridTitle, Title } from './styles';
 import { MaterialIcon } from '../../components/Icon';
 
-export function TitleLabel(props:{ text:string }) {
+interface props {
+    text:string,
+    onPress:any
+}
+
+export function TitleLabel(props:props) {
   return (
       <GridTitle>
-          <ArrowBack> 
+          <ArrowBack onPress={props.onPress}> 
               <MaterialIcon size="large" color="#d8f0ed" name="arrow-left" /> 
           </ArrowBack>
           <Title>{props.text}</Title>
