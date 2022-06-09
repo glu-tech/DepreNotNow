@@ -12,7 +12,7 @@ export const Container = styled.View`
     top: 800px;
 `;
 
-export const Grid = styled.TouchableOpacity`
+export const ButtonGrid = styled.TouchableOpacity`
     width: 56px;
     height: 32px;
     border-radius: 100px;

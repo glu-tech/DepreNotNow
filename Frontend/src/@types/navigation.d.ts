@@ -4,6 +4,9 @@ export declare global {
             Welcome: undefined;
             Home: undefined;
             SelectionMusic: undefined;
+            SelectionTime: undefined;
+            ConfirmationSound: undefined;
+            MusicPlayer: undefined;
         }
     }
 }
