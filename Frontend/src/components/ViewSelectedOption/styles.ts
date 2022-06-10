@@ -21,4 +21,5 @@ export const Label = styled.Text`
     text-align: center;
     letter-spacing: 0.1px;
     color: #D8F0ED;
+    text-transform: capitalize;
 `;

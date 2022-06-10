@@ -13,7 +13,14 @@ const images = {
     }
 }
 
-export function CardStyleSound(props:{topLocate:number, imgName:string, head:string}) {
+interface props {
+    topLocate:number,
+    imgName:string,
+    head:string,
+    onPress?:any
+}
+
+export function CardStyleSound(props:props) {
     let sourceImg;
     if (props.imgName == "lofi"){
         sourceImg = images.lofi;
@@ -24,7 +31,7 @@ export function CardStyleSound(props:{topLocate:number, imgName:string, head:str
     }
 
     return (
-        <Card style={{ top: props.topLocate }}>
+        <Card onPress={props.onPress} style={{ top: props.topLocate }}>
             <LinearGradient colors={['#0c514949', '#0a142230']} style={{ flex: 1, borderRadius: 16 }}>
                 <SoundImage borderRadius={16} source={sourceImg.uri} />
                 <Title>{props.head}</Title>
