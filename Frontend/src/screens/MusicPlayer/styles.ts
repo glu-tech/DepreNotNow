@@ -45,3 +45,11 @@ export const BackgroundTypeLabel = styled.Text`
     letter-spacing: 0.25px;
     color: #D8F0ED;
 `;
+
+export const ControlSound = styled.View`
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 70px;
+    top: 515px;
+`;

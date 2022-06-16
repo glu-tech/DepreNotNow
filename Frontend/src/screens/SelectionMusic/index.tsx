@@ -18,19 +18,19 @@ export function SelectionMusic() {
       loadStorageBinaural();
   },[]);
 
-  async function requestBackgroundSound(style:string){
-    await AsyncStorage.setItem('@deprenotnow:backgroundSound', `${style}`).then(() => {
+  async function requestBackgroundSound(type:{name: string, value: string}){
+    await AsyncStorage.setItem('@deprenotnow:backgroundSound', `${[type.name, type.value]}`).then(() => {
       navigation.navigate('SelectionTime');
     });
-}
+  }
 
   return (
       <GridMenu title='Qual estilo vamos escutar?' visibleMenuBar={true} optionMenuSelected={[true, false, false]} >
         <ViewSelectedOption text={`${typeBinauralSound}`} imgName={"binaural"} borderTop={16} borderBottom={16} />
 
-        <CardStyleSound onPress={() => requestBackgroundSound('lofi')} head='LoFi' topLocate={35} imgName='lofi' />
-        <CardStyleSound onPress={() => requestBackgroundSound('softRock')} head='Soft Rock' topLocate={60} imgName='softRock' />
-        <CardStyleSound onPress={() => requestBackgroundSound('indie')} head='Indie' topLocate={85} imgName='indie' />
+        <CardStyleSound onPress={() => requestBackgroundSound({name:'LoFi', value:'lofi'})} head='LoFi' topLocate={35} imgName='lofi' />
+        <CardStyleSound onPress={() => requestBackgroundSound({name:'Soft Rock', value:'softRock'})} head='Soft Rock' topLocate={60} imgName='softRock' />
+        <CardStyleSound onPress={() => requestBackgroundSound({name:'Indie', value:'indie'})} head='Indie' topLocate={85} imgName='indie' />
       </GridMenu>
   );
 }
