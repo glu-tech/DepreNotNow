@@ -29,7 +29,7 @@ export function SelectionMusic() {
         <ViewSelectedOption text={`${typeBinauralSound}`} imgName={"binaural"} borderTop={16} borderBottom={16} />
 
         <CardStyleSound onPress={() => requestBackgroundSound({name:'LoFi', value:'lofi'})} head='LoFi' topLocate={35} imgName='lofi' />
-        <CardStyleSound onPress={() => requestBackgroundSound({name:'Soft Rock', value:'softRock'})} head='Soft Rock' topLocate={60} imgName='softRock' />
+        <CardStyleSound onPress={() => requestBackgroundSound({name:'Soft Rock', value:'soft_rock'})} head='Soft Rock' topLocate={60} imgName='softRock' />
         <CardStyleSound onPress={() => requestBackgroundSound({name:'Indie', value:'indie'})} head='Indie' topLocate={85} imgName='indie' />
       </GridMenu>
   );
