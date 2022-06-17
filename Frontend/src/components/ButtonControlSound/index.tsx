@@ -14,7 +14,13 @@ const images = {
     }
 }
 
-export function ButtonControlSound(props:{styles:any, imgName:string, }) {
+interface props {
+    styles:any;
+    imgName:string;
+    onPress:any;
+}
+
+export function ButtonControlSound(props:props) {
     let sourceImg;
     if (props.imgName == "backTime"){
         sourceImg = images.backTime;
@@ -25,7 +31,7 @@ export function ButtonControlSound(props:{styles:any, imgName:string, }) {
     }
 
     return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={props.onPress}>
             <ImgSound style={props.styles} source={sourceImg.uri} />
         </TouchableOpacity>
     );
