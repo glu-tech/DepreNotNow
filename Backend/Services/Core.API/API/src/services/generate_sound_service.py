@@ -37,7 +37,7 @@ class GenerateSoundService:
     def merge_sound(self, model:MergeSoundModel):
         sound = self.__sound_config.configuration_sounds_final(model.get_binaural(), model.get_background())
         file = self.__sound_manage.export_sound(sound, model.get_path(), 
-            f"sound_{model.get_type_binaural()}_{model.get_type_background()}_{model.get_time()}_{model.get_date()}", 
+            f"sound_{model.get_type_binaural()}_{model.get_type_background()}_{model.get_time()}", 
             model.get_format())
         return file.name
 
