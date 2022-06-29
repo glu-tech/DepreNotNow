@@ -18,7 +18,7 @@ export function Home() {
     <ContainerScreen visibleMenuBar={true} optionMenuSelected={[true, false, false]}>
       <Title>O que vamos fazer hoje?</Title>
 
-      <CardSound onPress={() => requestTypeBinaural({name: 'Relaxar', value: 'relax'})} topLocate={182} imgName={"relax"} head={"Relaxar"} subhead={"Você quer aliviar aquela crise de ansiedade?"} />
+      <CardSound onPress={() => requestTypeBinaural({name: 'Relaxar', value: 'calm'})} topLocate={182} imgName={"relax"} head={"Relaxar"} subhead={"Você quer aliviar aquela crise de ansiedade?"} />
       <CardSound onPress={() => requestTypeBinaural({name: 'Dormir', value: 'sleep'})} topLocate={372} imgName={"sleep"} head={"Dormir"} subhead={"Você está sem conseguir dormir?"} />
       <CardSound onPress={() => requestTypeBinaural({name: 'Alegrar', value: 'happy'})} topLocate={562} imgName={"happy"} head={"Alegrar"} subhead={"Você está triste e precisa se animar?"} />
 
