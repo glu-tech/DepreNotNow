@@ -32,7 +32,7 @@ export function Menu(props:{selected:boolean[]}) {
         loadStorageTimeSound();
     },[]);
 
-    function handleRedirectPlayer(){
+    async function handleRedirectPlayer(){
         if(typeBinauralSound != '' && backgroundSound != '' && timeSound != ''){
             navigation.navigate('MusicPlayer');
         } else {
