@@ -9,6 +9,9 @@ const images = {
     playMusic: { 
         uri: require('./../../assets/imgPlaySound.png')
     },
+    pauseMusic: { 
+        uri: require('./../../assets/imgPauseSound.png')
+    },
     fowardTime: { 
         uri: require('./../../assets/imgFowardTimeSound.png')
     }
@@ -26,6 +29,8 @@ export function ButtonControlSound(props:props) {
         sourceImg = images.backTime;
     } else if (props.imgName == "playMusic"){
         sourceImg = images.playMusic;
+    } else if (props.imgName == "pauseMusic"){
+        sourceImg = images.pauseMusic;
     } else {
         sourceImg = images.fowardTime;
     }
