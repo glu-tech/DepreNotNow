@@ -1,38 +1,32 @@
+import { RFValue } from "react-native-responsive-fontsize";
 import styled from "styled-components/native";
 
 export const GridPlayer = styled.View`
-    align-items: center;
-    left: 20px;
-    top: 175px;
+  display: flex;
+  align-items: center;
+  margin-top: ${RFValue(24)}px;
+`;
+
+export const TextContainer = styled.View`
+  position: absolute;
+  display: flex;
+  text-align: center;
 `;
 
 export const MinutesLabel = styled.Text`
-    position: absolute;
-    width: 157px;
-    height: 61px;
-    top: 35%;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 50px;
-    line-height: 50px;
-    text-align: center;
-    letter-spacing: 0.1px;
-    color: #D8F0ED;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: ${RFValue(48)}px;
+  color: #d8f0ed;
 `;
 
 export const DescriptionLabel = styled.Text`
-    position: absolute;
-    width: 48px;
-    height: 48px;
-    top: 60%;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 25px;
-    line-height: 25px;
-    text-align: center;
-    letter-spacing: 0.1px;
-    color: #D8F0ED;
-    opacity: 0.8;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: ${RFValue(24)}px;
+  text-align: center;
+  color: #d8f0ed;
+  opacity: 0.8;
 `;

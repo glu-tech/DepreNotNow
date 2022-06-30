@@ -1,20 +1,22 @@
-import React from 'react';
-import { ArrowBack, GridTitle, Title } from './styles';
-import { MaterialIcon } from '../../components/Icon';
+import React from "react";
+import { ArrowBack, GridTitle, Title } from "./styles";
+import { MaterialIcon } from "../../components/Icon";
+import { useNavigation } from "@react-navigation/native";
 
 interface props {
-    text:string,
-    onPress:any
+  text: string;
+  onPress: any;
 }
 
-export function TitleLabel(props:props) {
+export function TitleLabel(props: any) {
+  const navigator = useNavigation();
   return (
-      <GridTitle>
-          <ArrowBack onPress={props.onPress}> 
-              <MaterialIcon size="large" color="#d8f0ed" name="arrow-left" /> 
-          </ArrowBack>
-          <Title>{props.text}</Title>
-      </GridTitle>
+    <GridTitle>
+      <ArrowBack onPress={navigator.goBack}>
+        <MaterialIcon size="large" color="#d8f0ed" name="arrow-left" />
+      </ArrowBack>
+      <Title>{props.title}</Title>
+    </GridTitle>
   );
 }
 
