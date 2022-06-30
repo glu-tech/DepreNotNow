@@ -1,24 +1,66 @@
-import React from 'react';
-import ZoneCirclePlayerMusic from '../ZoneCirclePlayerMusic';
-import { DescriptionLabel, GridPlayer, MinutesLabel } from './styles';
+import React from "react";
+import { RFValue } from "react-native-responsive-fontsize";
+import ZoneCirclePlayerMusic from "../ZoneCirclePlayerMusic";
+import {
+  DescriptionLabel,
+  GridPlayer,
+  MinutesLabel,
+  TextContainer,
+} from "./styles";
 
-export function CirclePlayerMusic(props:{ children?:any, valueMinutes:string }) {
+export function CirclePlayerMusic(props: {
+  children?: any;
+  valueMinutes: string;
+}) {
   return (
-        <GridPlayer>
-            <ZoneCirclePlayerMusic imgName='imgPlayerZoneZeroSound' styleImage={{ width: 400, height: 400, opacity: 0.2 }}>
-                <ZoneCirclePlayerMusic imgName='imgPlayerZoneOneSound' styleImage={{ width: 350, height: 350, opacity: 0.3 }}>
-                    <ZoneCirclePlayerMusic imgName='imgPlayerZoneTwoSound' styleImage={{ width: 300, height: 300, opacity: 0.4 }}>
-                        <ZoneCirclePlayerMusic imgName='imgPlayerZoneThreeSound' styleImage={{ width: 250, height: 250, opacity: 0.5 }}>
-                            <ZoneCirclePlayerMusic imgName='imgPlayerZoneCircleSound' styleImage={{ width: 200, height: 200, opacity: 0.7 }}>
-                                <MinutesLabel>{props.valueMinutes}</MinutesLabel>
-                                <DescriptionLabel>MIN</DescriptionLabel>
-                            </ZoneCirclePlayerMusic>
-                        </ZoneCirclePlayerMusic>
-                    </ZoneCirclePlayerMusic>
-                </ZoneCirclePlayerMusic>
+    <GridPlayer>
+      <ZoneCirclePlayerMusic
+        imgName="imgPlayerZoneZeroSound"
+        styleImage={{ width: RFValue(400), height: RFValue(400), opacity: 0.2 }}
+      >
+        <ZoneCirclePlayerMusic
+          imgName="imgPlayerZoneOneSound"
+          styleImage={{
+            width: RFValue(350),
+            height: RFValue(350),
+            opacity: 0.3,
+          }}
+        >
+          <ZoneCirclePlayerMusic
+            imgName="imgPlayerZoneTwoSound"
+            styleImage={{
+              width: RFValue(300),
+              height: RFValue(300),
+              opacity: 0.4,
+            }}
+          >
+            <ZoneCirclePlayerMusic
+              imgName="imgPlayerZoneThreeSound"
+              styleImage={{
+                width: RFValue(250),
+                height: RFValue(250),
+                opacity: 0.5,
+              }}
+            >
+              <ZoneCirclePlayerMusic
+                imgName="imgPlayerZoneCircleSound"
+                styleImage={{
+                  width: RFValue(200),
+                  height: RFValue(200),
+                  opacity: 0.7,
+                }}
+              >
+                <TextContainer>
+                  <MinutesLabel>{props.valueMinutes}</MinutesLabel>
+                  <DescriptionLabel>MIN</DescriptionLabel>
+                </TextContainer>
+              </ZoneCirclePlayerMusic>
             </ZoneCirclePlayerMusic>
-            {props.children}
-        </GridPlayer>
+          </ZoneCirclePlayerMusic>
+        </ZoneCirclePlayerMusic>
+      </ZoneCirclePlayerMusic>
+      {props.children}
+    </GridPlayer>
   );
 }
 
