@@ -1,25 +1,13 @@
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import React, {
-  useCallback,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react";
-import Spinner from "react-native-loading-spinner-overlay/lib";
-import { Audio } from "expo-av";
-import ButtonControlSound from "../../components/ButtonControlSound";
-import CirclePlayerMusic from "../../components/CirclePlayerMusic";
-import ContainerScreen from "../../components/ContainerScreen";
+import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Alert } from "react-native";
-import {
-  BackgroundTypeLabel,
-  BinauralTypeLabel,
-  Title,
-  ControlSound,
-} from "./styles";
-import api from "../../services/api";
+import Spinner from "react-native-loading-spinner-overlay/lib";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useNavigation } from "@react-navigation/native";
+import { Audio } from "expo-av";
+import ContainerScreen from "../../components/ContainerScreen";
+import CirclePlayerMusic from "../../components/CirclePlayerMusic";
+import { BackgroundTypeLabel, BinauralTypeLabel, Title } from "./styles";
+import api from "../../services/api";
 
 export function MusicPlayer() {
   const [typeBinauralSound, setTypeBinauralSound] = useState<string>();
@@ -138,11 +126,7 @@ export function MusicPlayer() {
       optionMenuSelected={[false, true, false]}
     >
       {spinner == true ? (
-        <Spinner
-          visible={true}
-          textContent={"Carregando..."}
-          textStyle={{ color: "#FFF" }}
-        />
+        <Spinner visible={true} textContent={"Carregando..."} textStyle={{ color: "#FFF" }} />
       ) : null}
       <Title>Player</Title>
       <CirclePlayerMusic onPress={TogglePlay} playing={!playing} valueMinutes={(time && getTime()) || ""}>
@@ -152,19 +136,6 @@ export function MusicPlayer() {
         <BackgroundTypeLabel>
           {typeBackgroundSound?.split(",")[0]}
         </BackgroundTypeLabel>
-        {/* <ControlSound>
-          <ButtonControlSound
-            onPress={TogglePlay}
-            imgName={playing ? "playMusic" : "pauseMusic"}
-            styles={{
-              position: "absolute",
-              width: playing ? 60 : 70,
-              height: playing ? 60 : 70,
-              left: 80,
-              top: playing ? -3 : -7,
-            }}
-          />
-        </ControlSound> */}
       </CirclePlayerMusic>
     </ContainerScreen>
   );
