@@ -5943,10 +5943,10 @@ react-native-safe-area-context@4.2.4:
   resolved "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-4.2.4.tgz"
   integrity sha512-OOX+W2G4YYufvryonn6Kw6YnyT8ZThkxPHZBD04NLHaZmicUaaDVII/PZ3M5fD1o5N62+T+8K4bCS5Un2ggvkA==
 
-react-native-screens@~3.11.1:
-  version "3.11.1"
-  resolved "https://registry.npmjs.org/react-native-screens/-/react-native-screens-3.11.1.tgz"
-  integrity sha512-ziQqVm97tNtovacyHwNmDwJPb8n9CqwsfttXx2p5Hk7wUWemDcPAX0ZJ/nNnGMSq2p2QPhPjjUpr3qKXuES0sQ==
+react-native-screens@~3.14.0:
+  version "3.14.0"
+  resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-3.14.0.tgz#e3715f76e59151f3595bf2fa40fde792a8b2d9ef"
+  integrity sha512-ckwEped1/2KmbPwUgHtH2HAkTmaxb3Y2EseCk1VEvR+ilCj21Zqa+ZsLjLuWf8yKlJxu5+t8RjRppxZ2kFmkHQ==
   dependencies:
     react-freeze "^1.0.0"
     warn-once "^0.1.0"
