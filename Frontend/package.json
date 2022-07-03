@@ -34,7 +34,9 @@
     "@types/react": "~17.0.21",
     "@types/react-native": "~0.66.13",
     "@types/react-native-vector-icons": "^6.4.10",
+    "@types/shell-quote": "^1.7.1",
     "@types/styled-components-react-native": "^5.1.3",
+    "shell-quote": "1.7.3",
     "typescript": "~4.3.5"
   },
   "private": true
