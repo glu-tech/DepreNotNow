@@ -5,8 +5,11 @@
 
 version: 2
 updates:
-  - package-ecosystem: "" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  # Enable version updates for npm
+  - package-ecosystem: "npm"
+    # Look for `package.json` and `lock` files in the `Frontend` directory
+    directory: "/Frontend"
+    # Check the npm registry for updates every day (weekdays)
     schedule:
-      interval: "weekly"
+      interval: "daily"
 
