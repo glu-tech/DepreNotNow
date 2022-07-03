@@ -1,135 +1,171 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import React, { useEffect, useRef, useState } from 'react';
-import Spinner from 'react-native-loading-spinner-overlay/lib';
-import { Audio } from 'expo-av';
-import ButtonControlSound from '../../components/ButtonControlSound';
-import CirclePlayerMusic from '../../components/CirclePlayerMusic';
-import ContainerScreen from '../../components/ContainerScreen';
-import { BackgroundTypeLabel, BinauralTypeLabel, Title, ControlSound } from './styles';
-import api from '../../services/api';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import React, {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
+import Spinner from "react-native-loading-spinner-overlay/lib";
+import { Audio } from "expo-av";
+import ButtonControlSound from "../../components/ButtonControlSound";
+import CirclePlayerMusic from "../../components/CirclePlayerMusic";
+import ContainerScreen from "../../components/ContainerScreen";
+import { Alert } from "react-native";
+import {
+  BackgroundTypeLabel,
+  BinauralTypeLabel,
+  Title,
+  ControlSound,
+} from "./styles";
+import api from "../../services/api";
+import { useNavigation } from "@react-navigation/native";
 
 export function MusicPlayer() {
   const [typeBinauralSound, setTypeBinauralSound] = useState<string>();
   const [typeBackgroundSound, setTypeBackgroundSound] = useState<string>();
   const [timeSound, setTimeSound] = useState<string>();
   const [spinner, setSpinner] = useState<boolean>(false);
-  const [loaded, setLoaded] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const sound = useRef(new Audio.Sound());
+  const [loadData, setLoadData] = useState<boolean>(false);
+  const [playing, setPlaying] = useState<boolean>(true);
+  const [time, setTime] = useState<number>();
+  const timeInterval = useRef<any>();
+  const [audio, setAudio] = useState<Audio.Sound>();
+  const navigation = useNavigation();
 
-  useEffect(() => {
-      async function loadStorage() {
-          const typeBinaural:string | null = await AsyncStorage.getItem('@deprenotnow:typeBinaural');
-          const typeBackground:string | null = await AsyncStorage.getItem('@deprenotnow:backgroundSound');
-          const timeSound:string | null = await AsyncStorage.getItem('@deprenotnow:timeSound');
+  const getTime = () => {
+    if (!time) return "";
+    const minutes = Math.floor(time / 60);
+    const secounds = Math.floor(time % 60);
+    return `${String(minutes).padStart(2, "0")}:${String(secounds).padStart(
+      2,
+      "0"
+    )}`;
+  };
+  useLayoutEffect(() => {
+    async function loadStorage() {
+      const typeBinaural: string | null = await AsyncStorage.getItem(
+        "@deprenotnow:typeBinaural"
+      );
+      const typeBackground: string | null = await AsyncStorage.getItem(
+        "@deprenotnow:backgroundSound"
+      );
+      const timeSound: string | null = await AsyncStorage.getItem(
+        "@deprenotnow:timeSound"
+      );
+      setTime(Number(timeSound) * 60);
 
-          setTypeBinauralSound(typeBinaural || '');
-          setTypeBackgroundSound(typeBackground || '');
-          setTimeSound(timeSound || '');
-      }
+      setTypeBinauralSound(() => typeBinaural || "");
+      setTypeBackgroundSound(() => typeBackground || "");
+      setTimeSound(() => timeSound || "");
+      setLoadData(true);
+    }
 
-      loadStorage().then(() => { console.log(typeBinauralSound) });
-  },[]);
-
-  useEffect(() => {
-    loadAudio().finally(() => { setSpinner(false) });
+    loadStorage();
   }, []);
 
-  const playAudio = async () => {
-    try {
-      const result = await sound.current.getStatusAsync();
-      if (result.isLoaded) {
-        if (result.isPlaying === false) {
-          sound.current.playAsync();
-        }
-      }
-    } catch (error) {}
-  };
+  const TogglePlay = useCallback(async () => {
+    if (!audio) return;
+    const status = await audio.getStatusAsync();
+    if (!status.isLoaded) return;
+    status.isPlaying ? audio.pauseAsync() : audio.playAsync();
+    setPlaying(status.isPlaying);
+  }, [audio]);
 
-  const pauseAudio = async () => {
-    try {
-      const result = await sound.current.getStatusAsync();
-      if (result.isLoaded) {
-        if (result.isPlaying === true) {
-          sound.current.pauseAsync();
-        }
-      }
-    } catch (error) {}
-  };
+  useEffect(() => {
+    const loadAudio = async () => {
+      setSpinner(true);
 
-  const loadAudio = async () => {
-    setLoading(true);
-    setSpinner(true);
-    const checkLoading = await sound.current.getStatusAsync();
-    if (checkLoading.isLoaded === false) {
       try {
-        console.log(timeSound, typeBackgroundSound, typeBinauralSound);
-        await api.post('sound/generate', { 
-                "typeBinaural": "calm",
-                "typeBackground": "lofi",
-                "time": 300
-             }).then(async (res) => {
-                console.log(res.data)
-                const result = await sound.current.loadAsync({ uri: res.data['url_sound'] }, {}, true);
-                if (result.isLoaded === false) {
-                  setLoading(false);
-                  setSpinner(false);
-                } else {
-                  setLoading(false);
-                  setLoaded(true);
-                  setSpinner(false);
-                }
-             });
+        const audioData = await api.post("sound/generate/", {
+          typeBinaural: `${typeBinauralSound?.split(",")[1]}`,
+          typeBackground: `${typeBackgroundSound?.split(",")[1]}`,
+          time: timeSound ? parseInt(timeSound) * 60 : 0,
+        });
+        const audioBuffer = await Audio.Sound.createAsync(
+          { uri: audioData.data["url_sound"] },
+          {}
+        );
+        audioBuffer.sound.setIsLoopingAsync(true).then(() => {
+          setAudio(audioBuffer.sound);
+        });
       } catch (error) {
-        setLoading(false);
+        return Alert.alert("Ops... Ocorreu um erro 😓");
+      } finally {
         setSpinner(false);
       }
-    } else {
-      setLoading(false);
-      setSpinner(false);
+    };
+    if (loadData) {
+      loadAudio();
     }
-  };
+  }, [loadData]);
+
+  const handlerTimer = useCallback(async () => {
+    if (!audio) return;
+    const status = await audio.getStatusAsync();
+    if (status.isLoaded && status.isPlaying) {
+      const timeout = setTimeout(() => {
+        setTime((oldSeconts) =>
+          oldSeconts == null ? Number(timeSound) : oldSeconts > 0 ? oldSeconts - 1 : 0
+        );
+        handlerTimer();
+      }, 1000);
+    }
+  }, [audio]);
+
+  const handlerFinish = (async () => {
+    if (!audio) return;
+    const status = await audio.getStatusAsync();
+    if (status.isLoaded && time == 0){
+      setPlaying(status.isPlaying);
+      audio.stopAsync();
+      Alert.alert("Acabou!!! Vamos mais um som binaural?")
+      navigation.navigate('Home');
+    }
+  });
+
+  useEffect(() => {
+    handlerTimer();
+  }, [playing]);
+
+  useEffect(() => {
+    handlerFinish();
+  }, [time]);
 
   return (
-    <ContainerScreen visibleMenuBar={true} optionMenuSelected={[false, true, false]}>
-      { 
-        spinner == true 
-        ? <Spinner visible={true} textContent={'Carregando...'} textStyle={{ color: '#FFF' }} />
-        : null
-      }
-        <Title>Player</Title>
-        <CirclePlayerMusic valueMinutes={`${timeSound}:00`}>
-          <BinauralTypeLabel>{typeBinauralSound?.split(',')[0]}</BinauralTypeLabel>
-          <BackgroundTypeLabel>{typeBackgroundSound?.split(',')[0]}</BackgroundTypeLabel>
-          <ControlSound>
-            <ButtonControlSound onPress={() => {}} imgName='backTime' 
-                  styles={{ 
-                    position: 'absolute',
-                    width: 50,
-                    height: 50,
-                    left: 15, 
-                  }} />
-
-            <ButtonControlSound onPress={() => playAudio()} 
-                  imgName='playMusic' 
-                  styles={{ 
-                    position: 'absolute',
-                    width: 70,
-                    height: 70,
-                    left: 80, 
-                    top: -7
-                  }} />
-
-            <ButtonControlSound onPress={() => {}} 
-                  imgName='fowardTime' 
-                  styles={{ 
-                    position: 'absolute',
-                    width: 50,
-                    height: 50,
-                    left: 155
-                  }} />
-          </ControlSound>
-        </CirclePlayerMusic>
+    <ContainerScreen
+      visibleMenuBar={true}
+      optionMenuSelected={[false, true, false]}
+    >
+      {spinner == true ? (
+        <Spinner
+          visible={true}
+          textContent={"Carregando..."}
+          textStyle={{ color: "#FFF" }}
+        />
+      ) : null}
+      <Title>Player</Title>
+      <CirclePlayerMusic onPress={TogglePlay} playing={!playing} valueMinutes={(time && getTime()) || ""}>
+        <BinauralTypeLabel>
+          {typeBinauralSound?.split(",")[0]}
+        </BinauralTypeLabel>
+        <BackgroundTypeLabel>
+          {typeBackgroundSound?.split(",")[0]}
+        </BackgroundTypeLabel>
+        {/* <ControlSound>
+          <ButtonControlSound
+            onPress={TogglePlay}
+            imgName={playing ? "playMusic" : "pauseMusic"}
+            styles={{
+              position: "absolute",
+              width: playing ? 60 : 70,
+              height: playing ? 60 : 70,
+              left: 80,
+              top: playing ? -3 : -7,
+            }}
+          />
+        </ControlSound> */}
+      </CirclePlayerMusic>
     </ContainerScreen>
   );
 }
