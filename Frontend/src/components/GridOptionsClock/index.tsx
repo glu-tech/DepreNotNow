@@ -9,7 +9,7 @@ export function GridOptionsClock() {
 
   async function requestTimeSound(style:number){
     await AsyncStorage.setItem('@deprenotnow:timeSound', `${style}`).then(() => {
-      navigation.navigate('MusicPlayer');
+      navigation.navigate('ConfirmationSound');
     });
   }
 
