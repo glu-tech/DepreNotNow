@@ -1,10 +1,8 @@
 import styled from 'styled-components/native'
 
-export const Card = styled.TouchableOpacity`
-    position: absolute;
+export const Grid = styled.TouchableOpacity`
     width: 358px;
     height: 170px;
-    left: 16px;
     border-radius: 16px;
     animation-timing-function: ease-out;
     animation-duration: 300ms;
@@ -14,6 +12,8 @@ export const SoundImage = styled.Image`
     position: absolute;
     width: 358px;
     height: 107px;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
 `;
 
 export const TitleContainer = styled.View`

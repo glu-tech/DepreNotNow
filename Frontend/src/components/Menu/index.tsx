@@ -44,10 +44,14 @@ export function Menu(props:{selected:boolean[]}) {
         navigation.navigate('Home');
     }
 
+    function handleRedirectHelp(){
+        navigation.navigate('Help');
+    }
+
     return (
     <View>
         <ItemMenu onPress={handleRedirectHome} leftLocate={50} icon={"home-outline"} nameItem={"Início"} selected={props.selected[0]} />
         <ItemMenu onPress={handleRedirectPlayer} leftLocate={166} icon={""} nameItem={"Player"} selected={props.selected[1]} />
-        <ItemMenu leftLocate={282} icon={"lightbulb-outline"} nameItem={"Ajuda"} selected={props.selected[2]} />
+        <ItemMenu onPress={handleRedirectHelp} leftLocate={282} icon={"lightbulb-outline"} nameItem={"Ajuda"} selected={props.selected[2]} />
     </View>
 )};

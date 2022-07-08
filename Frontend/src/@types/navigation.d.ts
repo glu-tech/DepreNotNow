@@ -7,6 +7,8 @@ export declare global {
             SelectionTime: undefined;
             ConfirmationSound: undefined;
             MusicPlayer: undefined;
+            Help: undefined;
+            Profile: undefined;
         }
     }
 }
