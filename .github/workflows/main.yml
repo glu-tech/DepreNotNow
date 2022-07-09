@@ -27,7 +27,8 @@ jobs:
           sudo apt-get install python-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev libsdl1.2-dev libsmpeg-dev python-numpy subversion libportmidi-dev ffmpeg libswscale-dev libavformat-dev libavcodec-dev libfreetype6-dev
           python -m pip install --upgrade pip
           python3 -m pip install --upgrade pytube
-          python -m pip install flake8 pytest pygame==2.0.0.dev6
+          python -m pip install flake8 pytest
+          python3 -m pip install pygame==2.0.0.dev10
           cd $GITHUB_WORKSPACE/Backend/Services/Core.API/API/src
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           
