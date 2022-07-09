@@ -4,14 +4,16 @@
 [![NPM](https://api.codeclimate.com/v1/badges/7dc798db81a62774f99b/maintainability)](https://codeclimate.com/github/glu-tech/DepreNotNow)
 [![NPM](https://camo.githubusercontent.com/2bbe4dbaee4e9d5713c8621cf4c91f4128105283dc1d656009c5aea3618f9110/68747470733a2f2f736e796b2e696f2f746573742f6769746875622f6477796c2f686170692d617574682d6a7774322f62616467652e7376673f74617267657446696c653d7061636b6167652e6a736f6e)](https://app.snyk.io/org/lucaslgu/project/0bd5c29f-59d9-470a-a09e-4224c2fce0fe)
 
+***
+
 [Wiki](https://github.com/glu-tech/DepreNotNow/wiki) | [Docs](https://artistic-tea-70d.notion.site/DepreNotNow-ccc60d95dcbe4e0793ad7270d72d438c)
 
 ***
 
 ## Sobre o projeto
 
-O projeto é um aplicativo mobile, do tipo reprodutor gerador de binaural beats. 
-Está dividido a parte de backend em python com o microframework Flask e a parte de frontend em mobile com typescript e React Native
+* O projeto é um aplicativo mobile, do tipo reprodutor gerador de binaural beats. 
+* Está dividido a parte de backend em python com o microframework Flask e a parte de frontend em mobile com typescript e React Native
 
 ### Binaraul Beats
 
@@ -24,17 +26,24 @@ O som de fundo mistificado com binaural tem como finalidade tornar a música mai
 
 Para melhor experiência recomenda-se o uso de headphones, pois há uma mudança de frequência de acordo com o tipo do som ao longo do tempo, uma variância de frequência específica para cada tipo de binaural e também, para eliminar ruídos externos.
 
-## Como construir e executar o projeto?
+***
+
+## Construindo e executando o projeto
 
 Para poder construir e executar o projeto, acesse [nesta documentação](https://github.com/glu-tech/DepreNotNow/wiki/How-to-execute-the-project) todos os passos para a construção e execução do DepreNotNow, tanto o backend, quanto o frontend e seus devidos pré-requisitos.
 
-## Como contribuir com o DepreNotNow?
+***
+
+## Contribuindo com o DepreNotNow
 
 Existe várias formas de contribuir para este projeto e como contribuir, para isto, separei [esta documentação](https://github.com/glu-tech/DepreNotNow/wiki/How-to-contribute), explicando sobre a contribuição e processos de aprovação de pull requests.
+
+***
 
 ## Como utilizar o DepreNotNow?
 
 Para utilização do app, a partir do seu dispositivo mobile ou emulador, partindo da premissa que já esteja com o projeto em execução, com todas suas devidas dependências instaladas, caso contrário [acesse essa documentação](https://github.com/glu-tech/DepreNotNow/wiki/Prerequisites) para os pré-requisitos e [esta documentação](https://github.com/glu-tech/DepreNotNow/wiki/How-to-execute-the-project) para construção e execução do projeto.
+
 Para entender como funciona e utilizar o app, você pode acessar o [Manual do usuário](https://artistic-tea-70d.notion.site/Manual-do-usu-rio-0efbe9cece7741b6982a5a0c9ba8a96e) e vai entender cada detalhe da aplicação. Podendo assim, com headphones, executar a produção de áudio binaural beats e escutar.
 Pode também optar por extrair o link gerado do bucket da AWS, através do Swagger UI da aplicação backend, e baixar diretamente o áudio em seu computador.
 
