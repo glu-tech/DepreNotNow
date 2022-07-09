@@ -34,7 +34,6 @@ jobs:
           python -m pip install -U setuptools
           pip install ez_setup
           python -m pip install flake8 pytest
-          python3 -m pip install pygame==2.0.0.dev6
           
           
       - name: Lint with flake8
