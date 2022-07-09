@@ -23,6 +23,10 @@ jobs:
       - name: Install dependencies
         run: |
           cd $GITHUB_WORKSPACE/Backend/Services/Core.API/API/src
+          apt-get update -y && apt-get upgrade && \ apt-get
+            install -y python3 python-pip python3-dev python-dev wget &&
+            update-alternatives --install /usr/bin/python python /usr/bin/python3 1 && \
+            apt-get install build-essential libssl-dev libffi-dev python-dev 
           python -m pip install --upgrade pip
           python -m pip install flake8 pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
