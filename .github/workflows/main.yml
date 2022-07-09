@@ -34,6 +34,7 @@ jobs:
           python -m pip install -U setuptools
           pip install ez_setup
           python -m pip install flake8 pytest
+          python3 -m pip install -U pygame
           
           
       - name: Lint with flake8
