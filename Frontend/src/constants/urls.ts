@@ -6,3 +6,4 @@ export const ArticleRelax = 'https://advancecare.pt/para-si/blog/artigos/10-bene
 export const ArticleBinauralBeats = 'https://www.techtudo.com.br/noticias/2020/07/binaural-beats-saiba-tudo-sobre-a-tecnica-que-promete-ajudar-a-dormir.ghtml';
 export const ArticleDepressionAndAnxiety = 'https://www.telavita.com.br/blog/diferenca-de-depressao-e-ansiedade/';
 export const ArticleQuestionaryHelpUs = 'https://forms.gle/J6zm9fs5JLWodHJVA';
+export const ArticleAcknowledgment = 'https://docs.google.com/presentation/d/1hwfzQ_iknBFImqKBRHjzw6dbUhFvXBrePIh0nFAHuGQ/edit?usp=sharing';

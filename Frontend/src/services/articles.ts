@@ -1,4 +1,4 @@
-import { ArticleBinauralBeats, ArticleDepressionAndAnxiety, ArticleQuestionaryHelpUs, ArticleRelax } from "../constants/urls";
+import { ArticleAcknowledgment, ArticleBinauralBeats, ArticleDepressionAndAnxiety, ArticleQuestionaryHelpUs, ArticleRelax } from "../constants/urls";
 import { Articles } from "../models/Articles";
 
 export const ArticlesApi = [
@@ -12,6 +12,9 @@ export const ArticlesApi = [
                 'Entenda a diferença entre ansiedade e depressão', 
                 'articleTwo', ArticleDepressionAndAnxiety),
     new Articles(4, 'Tens cinco minutinhos? Ajude-nos a melhorar!', 
-                'Responda agora nossa pesquisa e ajude-nos a melhorar o app', 
-                'articleThree', ArticleQuestionaryHelpUs)
+                'Responda agora nossa pesquisa e ajude-nos a melhorar', 
+                'articleThree', ArticleQuestionaryHelpUs),
+		new Articles(5, 'Agradecimentos!', 
+                                'Veja quem contribuiu com essa ideia e desenvolvimento!', 
+                                'articleFour', ArticleAcknowledgment)
   ];

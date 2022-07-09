@@ -24,6 +24,9 @@ const images = {
     },
     articleThree: { 
         uri: require('./../../assets/imgHelpArticleThree.png')
+    },
+    articleFour: { 
+        uri: require('./../../assets/imgHelpArticleFour.png')
     }
 }
 
@@ -49,9 +52,10 @@ export function Card(props:props) {
         sourceImg = images.articleOne;
     } else if (props.imgName == "articleTwo"){
         sourceImg = images.articleTwo;
-    }
-     else {
+    } else if (props.imgName == "articleThree"){
         sourceImg = images.articleThree;
+    } else {
+        sourceImg = images.articleFour;
     }
 
     return (
