@@ -30,6 +30,7 @@ jobs:
           python -m pip install --upgrade pip
           python3 -m pip install --upgrade pytube
           python -m pip install -U setuptools
+          pip install ez_setup
           python -m pip install flake8 pytest
           python3 -m pip install pygame==2.0.0.dev6
           cd $GITHUB_WORKSPACE/Backend/Services/Core.API/API/src
