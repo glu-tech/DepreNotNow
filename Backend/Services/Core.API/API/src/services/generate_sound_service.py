@@ -62,19 +62,27 @@ class GenerateSoundService:
     def validation_form(self, content):
         errors = []
         has_error = False
-        status_code = 200
+        status_code = 201
 
         try:
+            content["typeBinaural"]
             BinauralTypes[content["typeBinaural"]]
         except:
             status_code = 404
             errors.append("Not exist - Binaural sound type incompatible with the existing ones")
 
         try:
+            content["typeBackground"]
             BackgroundTypes[content["typeBackground"]]
         except:
             status_code = 404
             errors.append("Not exist - Background sound type incompatible with the existing ones")
+            
+        try:
+            content["time"]
+        except:
+            status_code = 404
+            errors.append("Not exist - Parameter time necessary for request")
 
         if len(errors) > 0:
             has_error = True

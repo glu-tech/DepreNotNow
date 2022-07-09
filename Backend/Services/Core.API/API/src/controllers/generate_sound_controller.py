@@ -29,7 +29,7 @@ model = api.model('SoundModel', {
 
 @api.route('/generate')
 class GenerateSoundController(Resource):
-    @api.response(200, "Binaural sound generated success")
+    @api.response(201, "Binaural sound generated success")
     @api.response(404, "Type of sound not found")
     @api.response(408, "Time exceeded when generating the audio")
     @api.response(400, "Some unhandled error occurred")
