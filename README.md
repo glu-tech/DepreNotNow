@@ -1,4 +1,4 @@
-# DepreNotNow
+# DepreNotNow 🌻
 
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/glu-tech/DepreNotNow/blob/main/LICENSE)
 [![NPM](https://api.codeclimate.com/v1/badges/7dc798db81a62774f99b/maintainability)](https://codeclimate.com/github/glu-tech/DepreNotNow)
