@@ -1,1 +1,266 @@
-{"_type":"export","__export_format":4,"__export_date":"2022-07-09T13:05:21.691Z","__export_source":"insomnia.desktop.app:v2022.4.2","resources":[{"_id":"req_d7b6f7df900b460db3180e53ef39abeb","parentId":"fld_e57d876861ae42d381391e1ec088ae0c","modified":1651749580002,"created":1651712287058,"url":"{{ _.base_url }}/user/name","name":"Generate_Reports_UserAccess","description":"","method":"GET","body":{},"parameters":[],"headers":[],"authentication":{},"metaSortKey":-1651409093456.5,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"fld_e57d876861ae42d381391e1ec088ae0c","parentId":"wrk_04e0e66b3fb94c75be914db3247d5ee7","modified":1651712268885,"created":1651712268885,"name":"GET","description":"","environment":{},"environmentPropertyOrder":null,"metaSortKey":-1651712268885,"_type":"request_group"},{"_id":"wrk_04e0e66b3fb94c75be914db3247d5ee7","parentId":null,"modified":1651105782908,"created":1651105782908,"name":"API Core - DepreNotNow","description":"","scope":"collection","_type":"workspace"},{"_id":"req_9c197d7a3a67484389ed3f1b2ecacd4e","parentId":"fld_e57d876861ae42d381391e1ec088ae0c","modified":1651780671810,"created":1651712398457,"url":"{{ _.base_url }}/user/feeling","name":"Generate_Reports_UserHealth","description":"","method":"GET","body":{},"parameters":[],"headers":[],"authentication":{},"metaSortKey":-1651344430616.75,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_d5a52f92cb054bcf811c3fde8f4069fd","parentId":"fld_f6c1bcfb34514c54b483def5a85edfbb","modified":1657371810731,"created":1651453465127,"url":"{{ _.base_url }}/user/name","name":"Capture_Name","description":"","method":"POST","body":{"mimeType":"application/json","text":"{\n\t\"username\": \"Lucas\"\n}"},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json","id":"pair_bf88bbabf79a4302be2697620a679519"}],"authentication":{},"metaSortKey":-1651453465127,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"fld_f6c1bcfb34514c54b483def5a85edfbb","parentId":"wrk_04e0e66b3fb94c75be914db3247d5ee7","modified":1651105918028,"created":1651105918028,"name":"POST","description":"","environment":{},"environmentPropertyOrder":null,"metaSortKey":-1651105918028,"_type":"request_group"},{"_id":"req_75721a28e5e74101ac0a33806f67a27e","parentId":"fld_f6c1bcfb34514c54b483def5a85edfbb","modified":1656466176752,"created":1651700992596,"url":"{{ _.base_url }}/user/feeling","name":"Capture_Feeling","description":"","method":"POST","body":{"mimeType":"application/json","text":"{\n\t\"feeling\": \"happy\"\n}"},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json","id":"pair_bf88bbabf79a4302be2697620a679519"}],"authentication":{},"metaSortKey":-1651279767777,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_d69469c8b1f14fcbbc42d312dbea5693","parentId":"fld_f6c1bcfb34514c54b483def5a85edfbb","modified":1656436172888,"created":1651106070427,"url":"{{ _.base_url }}sound/generate/","name":"Generate_Sound","description":"","method":"POST","body":{"mimeType":"application/json","text":"{\n\t\"typeBinaural\": \"calm\",\n\t\"typeBackground\": \"lofi\",\n\t\"time\": 300\n}"},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json","id":"pair_b8ae6b6a3885491483215654009a6e95"}],"authentication":{},"metaSortKey":-1651106070427,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"env_808862ec202a4f49ac1671e08ae490cb013aab9c","parentId":"wrk_04e0e66b3fb94c75be914db3247d5ee7","modified":1651881049959,"created":1651105782919,"name":"Base Environment","data":{"local":"localhost","port":5000,"protocol":"http","module":"core","complement":"api/{{ _.module }}/","base_url":"{{ _.protocol }}://{{ _.local }}:{{ _.port }}/{{ _.complement }}"},"dataPropertyOrder":{"&":["local","port","protocol","module","complement","base_url"]},"color":null,"isPrivate":false,"metaSortKey":1651105782919,"_type":"environment"},{"_id":"jar_808862ec202a4f49ac1671e08ae490cb013aab9c","parentId":"wrk_04e0e66b3fb94c75be914db3247d5ee7","modified":1651105782923,"created":1651105782923,"name":"Default Jar","cookies":[],"_type":"cookie_jar"},{"_id":"spc_c62fa89d59d54d358a6b9b7dc7663e00","parentId":"wrk_04e0e66b3fb94c75be914db3247d5ee7","modified":1651105782911,"created":1651105782911,"fileName":"API Core - DepreNotNow","contents":"","contentType":"yaml","_type":"api_spec"}]}
+{
+   "_type":"export",
+   "__export_format":4,
+   "__export_date":"2022-07-09T13:05:21.691Z",
+   "__export_source":"insomnia.desktop.app:v2022.4.2",
+   "resources":[
+      {
+         "_id":"req_d7b6f7df900b460db3180e53ef39abeb",
+         "parentId":"fld_e57d876861ae42d381391e1ec088ae0c",
+         "modified":1651749580002,
+         "created":1651712287058,
+         "url":"{{ _.base_url }}/user/name",
+         "name":"Generate_Reports_UserAccess",
+         "description":"",
+         "method":"GET",
+         "body":{
+            
+         },
+         "parameters":[
+            
+         ],
+         "headers":[
+            
+         ],
+         "authentication":{
+            
+         },
+         "metaSortKey":-1651409093456.5,
+         "isPrivate":false,
+         "settingStoreCookies":true,
+         "settingSendCookies":true,
+         "settingDisableRenderRequestBody":false,
+         "settingEncodeUrl":true,
+         "settingRebuildPath":true,
+         "settingFollowRedirects":"global",
+         "_type":"request"
+      },
+      {
+         "_id":"fld_e57d876861ae42d381391e1ec088ae0c",
+         "parentId":"wrk_04e0e66b3fb94c75be914db3247d5ee7",
+         "modified":1651712268885,
+         "created":1651712268885,
+         "name":"GET",
+         "description":"",
+         "environment":{
+            
+         },
+         "environmentPropertyOrder":null,
+         "metaSortKey":-1651712268885,
+         "_type":"request_group"
+      },
+      {
+         "_id":"wrk_04e0e66b3fb94c75be914db3247d5ee7",
+         "parentId":null,
+         "modified":1651105782908,
+         "created":1651105782908,
+         "name":"API Core - DepreNotNow",
+         "description":"",
+         "scope":"collection",
+         "_type":"workspace"
+      },
+      {
+         "_id":"req_9c197d7a3a67484389ed3f1b2ecacd4e",
+         "parentId":"fld_e57d876861ae42d381391e1ec088ae0c",
+         "modified":1651780671810,
+         "created":1651712398457,
+         "url":"{{ _.base_url }}/user/feeling",
+         "name":"Generate_Reports_UserHealth",
+         "description":"",
+         "method":"GET",
+         "body":{
+            
+         },
+         "parameters":[
+            
+         ],
+         "headers":[
+            
+         ],
+         "authentication":{
+            
+         },
+         "metaSortKey":-1651344430616.75,
+         "isPrivate":false,
+         "settingStoreCookies":true,
+         "settingSendCookies":true,
+         "settingDisableRenderRequestBody":false,
+         "settingEncodeUrl":true,
+         "settingRebuildPath":true,
+         "settingFollowRedirects":"global",
+         "_type":"request"
+      },
+      {
+         "_id":"req_d5a52f92cb054bcf811c3fde8f4069fd",
+         "parentId":"fld_f6c1bcfb34514c54b483def5a85edfbb",
+         "modified":1657371810731,
+         "created":1651453465127,
+         "url":"{{ _.base_url }}/user/name",
+         "name":"Capture_Name",
+         "description":"",
+         "method":"POST",
+         "body":{
+            "mimeType":"application/json",
+            "text":"{\n\t\"username\": \"Lucas\"\n}"
+         },
+         "parameters":[
+            
+         ],
+         "headers":[
+            {
+               "name":"Content-Type",
+               "value":"application/json",
+               "id":"pair_bf88bbabf79a4302be2697620a679519"
+            }
+         ],
+         "authentication":{
+            
+         },
+         "metaSortKey":-1651453465127,
+         "isPrivate":false,
+         "settingStoreCookies":true,
+         "settingSendCookies":true,
+         "settingDisableRenderRequestBody":false,
+         "settingEncodeUrl":true,
+         "settingRebuildPath":true,
+         "settingFollowRedirects":"global",
+         "_type":"request"
+      },
+      {
+         "_id":"fld_f6c1bcfb34514c54b483def5a85edfbb",
+         "parentId":"wrk_04e0e66b3fb94c75be914db3247d5ee7",
+         "modified":1651105918028,
+         "created":1651105918028,
+         "name":"POST",
+         "description":"",
+         "environment":{
+            
+         },
+         "environmentPropertyOrder":null,
+         "metaSortKey":-1651105918028,
+         "_type":"request_group"
+      },
+      {
+         "_id":"req_75721a28e5e74101ac0a33806f67a27e",
+         "parentId":"fld_f6c1bcfb34514c54b483def5a85edfbb",
+         "modified":1656466176752,
+         "created":1651700992596,
+         "url":"{{ _.base_url }}/user/feeling",
+         "name":"Capture_Feeling",
+         "description":"",
+         "method":"POST",
+         "body":{
+            "mimeType":"application/json",
+            "text":"{\n\t\"feeling\": \"happy\"\n}"
+         },
+         "parameters":[
+            
+         ],
+         "headers":[
+            {
+               "name":"Content-Type",
+               "value":"application/json",
+               "id":"pair_bf88bbabf79a4302be2697620a679519"
+            }
+         ],
+         "authentication":{
+            
+         },
+         "metaSortKey":-1651279767777,
+         "isPrivate":false,
+         "settingStoreCookies":true,
+         "settingSendCookies":true,
+         "settingDisableRenderRequestBody":false,
+         "settingEncodeUrl":true,
+         "settingRebuildPath":true,
+         "settingFollowRedirects":"global",
+         "_type":"request"
+      },
+      {
+         "_id":"req_d69469c8b1f14fcbbc42d312dbea5693",
+         "parentId":"fld_f6c1bcfb34514c54b483def5a85edfbb",
+         "modified":1656436172888,
+         "created":1651106070427,
+         "url":"{{ _.base_url }}sound/generate/",
+         "name":"Generate_Sound",
+         "description":"",
+         "method":"POST",
+         "body":{
+            "mimeType":"application/json",
+            "text":"{\n\t\"typeBinaural\": \"calm\",\n\t\"typeBackground\": \"lofi\",\n\t\"time\": 300\n}"
+         },
+         "parameters":[
+            
+         ],
+         "headers":[
+            {
+               "name":"Content-Type",
+               "value":"application/json",
+               "id":"pair_b8ae6b6a3885491483215654009a6e95"
+            }
+         ],
+         "authentication":{
+            
+         },
+         "metaSortKey":-1651106070427,
+         "isPrivate":false,
+         "settingStoreCookies":true,
+         "settingSendCookies":true,
+         "settingDisableRenderRequestBody":false,
+         "settingEncodeUrl":true,
+         "settingRebuildPath":true,
+         "settingFollowRedirects":"global",
+         "_type":"request"
+      },
+      {
+         "_id":"env_808862ec202a4f49ac1671e08ae490cb013aab9c",
+         "parentId":"wrk_04e0e66b3fb94c75be914db3247d5ee7",
+         "modified":1651881049959,
+         "created":1651105782919,
+         "name":"Base Environment",
+         "data":{
+            "local":"localhost",
+            "port":5000,
+            "protocol":"http",
+            "module":"core",
+            "complement":"api/{{ _.module }}/",
+            "base_url":"{{ _.protocol }}://{{ _.local }}:{{ _.port }}/{{ _.complement }}"
+         },
+         "dataPropertyOrder":{
+            "&":[
+               "local",
+               "port",
+               "protocol",
+               "module",
+               "complement",
+               "base_url"
+            ]
+         },
+         "color":null,
+         "isPrivate":false,
+         "metaSortKey":1651105782919,
+         "_type":"environment"
+      },
+      {
+         "_id":"jar_808862ec202a4f49ac1671e08ae490cb013aab9c",
+         "parentId":"wrk_04e0e66b3fb94c75be914db3247d5ee7",
+         "modified":1651105782923,
+         "created":1651105782923,
+         "name":"Default Jar",
+         "cookies":[
+            
+         ],
+         "_type":"cookie_jar"
+      },
+      {
+         "_id":"spc_c62fa89d59d54d358a6b9b7dc7663e00",
+         "parentId":"wrk_04e0e66b3fb94c75be914db3247d5ee7",
+         "modified":1651105782911,
+         "created":1651105782911,
+         "fileName":"API Core - DepreNotNow",
+         "contents":"",
+         "contentType":"yaml",
+         "_type":"api_spec"
+      }
+   ]
+}
