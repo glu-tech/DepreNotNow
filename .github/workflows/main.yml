@@ -2,9 +2,9 @@ name: CI - Backend Application
 
 on:
   push:
-    branches: [main]
+    branches: [CI_Process]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "CI_Process" ]
 
 permissions:
   contents: read
