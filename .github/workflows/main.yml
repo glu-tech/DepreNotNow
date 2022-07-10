@@ -22,12 +22,13 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sudo apt install -y libswscale-dev ffmpeg libavformat-dev libavcodec-dev libfreetype6-dev libsdl-image1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev libsdl1.2-dev  
+          sudo apt install -y libswscale-dev ffmpeg libavformat-dev libavcodec-dev libfreetype6-dev libsdl-image1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev libsdl1.2-dev alsa-utils alsa-firmware alsa-lib alsa-oss  
           python -m pip install --upgrade pip
           cd $GITHUB_WORKSPACE/Backend/Services/Core.API/API/src
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           python3 -m pip install --upgrade pytube ffmpeg setuptools 
           python -m pip install flake8 pytest          
+          export SDL_AUDIODRIVER='dsp'
           
       - name: Lint with flake8
         run: |
