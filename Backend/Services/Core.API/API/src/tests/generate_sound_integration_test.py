@@ -6,7 +6,7 @@ from app import app
 def test_generate_sound_endpoint():
     type_binaural = "calm"
     type_background = "safe_rock"
-    time = 10
+    time = 300
     response = app.test_client().post('/api/core/sound/generate/', data=json.dumps({
                                         'typeBinaural': type_binaural,
                                         'typeBackground': type_background,
