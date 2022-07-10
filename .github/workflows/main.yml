@@ -29,7 +29,7 @@ jobs:
           python3 -m pip install --upgrade pytube ffmpeg setuptools pygame
           python -m pip install flake8 pytest          
           export SDL_AUDIODRIVER='dsp'
-          sudo usermod -a -G pulse-access pi
+          aplay --group-add=audio
           
       - name: Lint with flake8
         run: |
