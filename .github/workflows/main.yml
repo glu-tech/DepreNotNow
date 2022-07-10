@@ -29,9 +29,11 @@ jobs:
           python3 -m pip install --upgrade pytube ffmpeg setuptools pygame
           python -m pip install flake8 pytest          
           export SDL_AUDIODRIVER='dsp'
-          aplay --group-add=audio
           
       - name: Lint with flake8
+        env: # Added those env vars
+            SDL_VIDEODRIVER: "dummy" 
+            SDL_AUDIODRIVER: "disk"
         run: |
           cd $GITHUB_WORKSPACE/Backend/Services/Core.API/API/src
           # stop the build if there are Python syntax errors or undefined names
