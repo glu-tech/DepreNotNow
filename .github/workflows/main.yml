@@ -28,6 +28,7 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           python3 -m pip install --upgrade pytube ffmpeg setuptools pygame
           python -m pip install flake8 pytest          
+          export SDL_AUDIODRIVER='dsp'
           
       - name: Lint with flake8
         env: # Added those env vars
