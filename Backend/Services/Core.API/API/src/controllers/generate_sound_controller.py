@@ -48,20 +48,23 @@ class GenerateSoundController(Resource):
                 "errors":errors
             }), status_code
         
-        model = GenerateSoundModel(BinauralTypes[content["typeBinaural"]].name, BackgroundTypes[content["typeBackground"]].name, content["time"])
-        enviroment.set_duration(model.get_time())
+        try:
+            aws_service.make_url(f'sound_{BinauralTypes[content["typeBinaural"]].name}_{BackgroundTypes[content["typeBackground"]].name}_{content["time"]}.wav', 'depre-not-now', "sounds")
+        except:
+            model = GenerateSoundModel(BinauralTypes[content["typeBinaural"]].name, BackgroundTypes[content["typeBackground"]].name, content["time"])
+            enviroment.set_duration(model.get_time())
 
-        model_merge_sound = generate_sound_service.generate_merge_sound(model, enviroment.get_duration(), enviroment.get_format())
+            model_merge_sound = generate_sound_service.generate_merge_sound(model, enviroment.get_duration(), enviroment.get_format())
 
-        filepath:str = generate_sound_service.merge_sound(model_merge_sound)
+            filepath:str = generate_sound_service.merge_sound(model_merge_sound)
 
-        file_url = aws_service.upload(filepath, filepath.split("merge/")[1], "sounds")
+            file_url = aws_service.upload(filepath, filepath.split("merge/")[1], "sounds")
 
-        LogsService().generate_log_info("Created binaural sound and upload for aws!")
+            LogsService().generate_log_info("Created binaural sound and upload for aws!")
 
-        return jsonify({
-            "status_code":status_code,
-            "url_sound":file_url,
-            "has_error":has_error,
-            "errors":errors
-        }), status_code
+            return jsonify({
+                "status_code":status_code,
+                "url_sound":file_url,
+                "has_error":has_error,
+                "errors":errors
+            }), status_code
