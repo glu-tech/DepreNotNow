@@ -9,6 +9,7 @@ url_base = "/api/core/user"
 content_type = "application/json"
 
 pygame.init()
+pygame.mixer.init()
 
 def test_capture_user_name_endpoint():
     username = "lucas"
