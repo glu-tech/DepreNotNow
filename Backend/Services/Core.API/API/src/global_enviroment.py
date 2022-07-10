@@ -83,7 +83,6 @@ class GlobalEnviroment:
     def inicialize_pygame(self):
         pygame.mixer.pre_init(self.__sample_rate, -self.__bits_sound, 2)
         pygame.init()
-        pygame.mixer.init()
 
     def exit_pygame(self):
         pygame.quit()
