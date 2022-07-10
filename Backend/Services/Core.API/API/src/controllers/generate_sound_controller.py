@@ -49,7 +49,7 @@ class GenerateSoundController(Resource):
             }), status_code
         
         try:
-            aws_service.make_url(f'sound_{BinauralTypes[content["typeBinaural"]].name}_{BackgroundTypes[content["typeBackground"]].name}_{content["time"]}.wav', 'depre-not-now', "sounds")
+            file_url = aws_service.make_url(f'sound_{BinauralTypes[content["typeBinaural"]].name}_{BackgroundTypes[content["typeBackground"]].name}_{content["time"]}.wav', 'depre-not-now', "sounds")
         except:
             model = GenerateSoundModel(BinauralTypes[content["typeBinaural"]].name, BackgroundTypes[content["typeBackground"]].name, content["time"])
             enviroment.set_duration(model.get_time())
@@ -62,9 +62,9 @@ class GenerateSoundController(Resource):
 
             LogsService().generate_log_info("Created binaural sound and upload for aws!")
 
-            return jsonify({
-                "status_code":status_code,
-                "url_sound":file_url,
-                "has_error":has_error,
-                "errors":errors
-            }), status_code
+        return jsonify({
+            "status_code":status_code,
+            "url_sound":file_url,
+            "has_error":has_error,
+            "errors":errors
+        }), status_code
