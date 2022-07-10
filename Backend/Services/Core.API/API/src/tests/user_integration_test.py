@@ -1,11 +1,14 @@
 from datetime import datetime
 import json
+import pygame
 
 from re import search
 from app import app
 
 url_base = "/api/core/user"
 content_type = "application/json"
+
+pygame.init()
 
 def test_capture_user_name_endpoint():
     username = "lucas"
