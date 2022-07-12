@@ -1,4 +1,5 @@
 from datetime import datetime
+import os
 
 from re import search
 from services.generate_sound_service import GenerateSoundService
@@ -22,6 +23,9 @@ def test_merge_sound_service():
     type_binaural = "calm"
     type_background = "safe_rock"
     time = 10
+    
+    if(os.environ.get('CREATE_BINAURAL') and bool(os.environ.get('CREATE_BINAURAL')) == True):
+        return
 
     model = GenerateSoundModel(BinauralTypes[type_binaural].name, BackgroundTypes[type_background].name, time)
     enviroment.set_duration(model.get_time())

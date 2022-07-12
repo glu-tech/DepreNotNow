@@ -30,3 +30,11 @@ class ConfigurationsOS:
         filename = filepath.split("merge")[1]
         path = os.path.dirname(os.path.realpath(f"{filepath}{filename}"))
         return urljoin(f'file://{address}', pathname2url(path)) 
+    
+    def validate_environment(self, name, condition):
+        if(os.environ.get(name)):
+            if(condition == os.environ.get(name)):
+                return True
+            else:
+                return False
+        return True
