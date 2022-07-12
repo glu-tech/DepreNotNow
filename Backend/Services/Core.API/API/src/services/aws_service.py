@@ -1,4 +1,3 @@
-from asyncio.windows_events import NULL
 import boto3
 import json
 import os
