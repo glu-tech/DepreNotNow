@@ -59,7 +59,7 @@ class Startup:
     def start(self):
         self.__enviroment.inicialize_pygame()
         
-        if(bool(self.__os_config.validate_environment('CREATE_BINAURAL', True))):
+        if(os.environ('CREATE_BINAURAL') == 'True'):
             self.download_sounds_background()
             self.make_sound_binaural_automatic()
 

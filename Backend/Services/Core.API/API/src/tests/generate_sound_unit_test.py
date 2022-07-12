@@ -24,7 +24,7 @@ def test_merge_sound_service():
     type_background = "safe_rock"
     time = 10
     
-    if(os.environ.get('CREATE_BINAURAL') and bool(os.environ.get('CREATE_BINAURAL')) == True):
+    if(os.environ.get('CREATE_BINAURAL') == 'False'):
         return
 
     model = GenerateSoundModel(BinauralTypes[type_binaural].name, BackgroundTypes[type_background].name, time)

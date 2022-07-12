@@ -1,3 +1,4 @@
+import os
 from flask_restx import Namespace, Resource, fields
 from pygame.locals import *
 from flask import jsonify, Blueprint, request
@@ -57,7 +58,7 @@ class GenerateSoundController(Resource):
                             "errors":errors
                         }), status_code
         
-        if(os_config.validate_environment('CREATE_BINAURAL', False) and load_url == ''):
+        if(os.environ('CREATE_BINAURAL') == 'False' and load_url == ''):
             return jsonify({
                 "status_code":404,
                 "url_sound":None,
