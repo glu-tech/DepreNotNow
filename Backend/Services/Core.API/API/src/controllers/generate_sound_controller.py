@@ -58,7 +58,7 @@ class GenerateSoundController(Resource):
                             "errors":errors
                         }), status_code
         
-        if(os.environ('CREATE_BINAURAL') == 'False' and load_url == ''):
+        if(os.environ.get('CREATE_BINAURAL') == 'False' and load_url == ''):
             return jsonify({
                 "status_code":404,
                 "url_sound":None,
