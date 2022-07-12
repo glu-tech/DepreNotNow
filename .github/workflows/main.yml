@@ -47,4 +47,5 @@ jobs:
           cd $GITHUB_WORKSPACE/Backend/Services/Core.API/API/src
           mkdir sounds
           mkdir reports
+          echo '{ "AWSAccessKeyId": "${{ AWS_Access.AWSACCESSKEYID }}", "AWSSecretKey": "${{ AWS_Access.AWSSECRETKEY }}" }' > .env.json
           python3 -m pytest
