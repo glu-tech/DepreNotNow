@@ -1,3 +1,4 @@
+import os
 from flask_restx import Namespace, Resource, fields
 from pygame.locals import *
 from flask import jsonify, Blueprint, request
@@ -47,6 +48,23 @@ class GenerateSoundController(Resource):
                 "has_error":has_error,
                 "errors":errors
             }), status_code
+        
+        load_url = aws_service.load_audio(f'sound_{BinauralTypes[content["typeBinaural"]].name}_{BackgroundTypes[content["typeBackground"]].name}_{content["time"]}.wav')
+        
+        if(load_url != ''): return jsonify({
+                            "status_code":status_code,
+                            "url_sound":load_url,
+                            "has_error":has_error,
+                            "errors":errors
+                        }), status_code
+        
+        if(os.environ.get('CREATE_BINAURAL') == 'False' and load_url == ''):
+            return jsonify({
+                "status_code":404,
+                "url_sound":None,
+                "has_error":True,
+                "errors":['Audio not found']
+            }), 404
         
         model = GenerateSoundModel(BinauralTypes[content["typeBinaural"]].name, BackgroundTypes[content["typeBackground"]].name, content["time"])
         enviroment.set_duration(model.get_time())

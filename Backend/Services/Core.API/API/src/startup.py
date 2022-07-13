@@ -1,3 +1,4 @@
+import os
 from enums.binaural_types import BinauralTypes
 from global_enviroment import GlobalEnviroment
 from models.background import Background
@@ -57,8 +58,10 @@ class Startup:
 
     def start(self):
         self.__enviroment.inicialize_pygame()
-        self.download_sounds_background()
-        self.make_sound_binaural_automatic()
+        
+        if(os.environ.get('CREATE_BINAURAL') == 'True'):
+            self.download_sounds_background()
+            self.make_sound_binaural_automatic()
 
     def download_sounds_background(self):
         url = "https://www.youtube.com/watch?v="

@@ -2,9 +2,9 @@ name: CI - Backend Application
 
 on:
   push:
-    branches: [main]
+    branches: [CI_Process]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "CI_Process" ]
 
 permissions:
   contents: read
@@ -28,10 +28,11 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           python3 -m pip install --upgrade pytube ffmpeg setuptools pygame
           python -m pip install flake8 pytest          
-          export SDL_AUDIODRIVER='dsp'
-          aplay --group-add=audio
           
       - name: Lint with flake8
+        env: # Added those env vars
+            SDL_VIDEODRIVER: "dummy" 
+            SDL_AUDIODRIVER: "disk"
         run: |
           cd $GITHUB_WORKSPACE/Backend/Services/Core.API/API/src
           # stop the build if there are Python syntax errors or undefined names
@@ -42,5 +43,9 @@ jobs:
       # Run our unit tests using the test application
       - name: Run unit and integration tests
         run: |
+          export CREATE_BINAURAL=False
           cd $GITHUB_WORKSPACE/Backend/Services/Core.API/API/src
+          mkdir sounds
+          mkdir reports
+          echo '{ "AWSAccessKeyId": "${{ secrets.AWS_Access.AWSACCESSKEYID }}", "AWSSecretKey": "${{ secrets.AWS_Access.AWSSECRETKEY }}" }' > .env.json
           python3 -m pytest

@@ -4,17 +4,27 @@ import os
 
 class AwsService():
     def upload(self, filename, name, path_bucket):        
-        bucket = "depre-not-now"
-        AWSAccessKeyId, AWSSecretKey = self.get_env_aws_key()
-        s3 = boto3.Session(
-            aws_access_key_id=AWSAccessKeyId,
-            aws_secret_access_key=AWSSecretKey,
-        ).client("s3")
+        bucket, s3 = self.load_bucket()
 
         try:
-            s3.upload_file(Filename=filename, Bucket=bucket, Key=f"{path_bucket}/{name}", ExtraArgs={'ACL': "public-read"})
+            s3.client('s3').upload_file(Filename=filename, Bucket=bucket, Key=f"{path_bucket}/{name}", ExtraArgs={'ACL': "public-read"})
         finally:
             return self.make_url(name, bucket, path_bucket)
+        
+    def load_audio(self, file):
+        try:
+            bucket, s3 = self.load_bucket()
+            return self.make_url(s3.resource('s3').Bucket(bucket).Object(file).key, bucket, 'sounds')
+        except:
+            return ''
+        
+    def load_bucket(self):
+        bucket = "depre-not-now"
+        AWSAccessKeyId, AWSSecretKey = self.get_env_aws_key()
+        return bucket, boto3.Session(
+            aws_access_key_id=AWSAccessKeyId,
+            aws_secret_access_key=AWSSecretKey,
+        )
 
     def make_url(self, name, bucket, path):
         base_url = f"https://{bucket}.s3.amazonaws.com/{path}/{name}"
