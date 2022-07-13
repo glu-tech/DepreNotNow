@@ -18,7 +18,7 @@
 
 ### Binaraul Beats
 
-O tema Binaural Beats consiste em criar uma faixa que contém frequências de batidas binaurais, daí o termo em inglês,  que ajuda o indivíduo em diversos estados mentais. Ademais,  afina-se a música (instrumentação) a fim de alcançar o estado cerebral associado a essa frequência.  
+O tema Binaural Beats consiste em criar uma faixa que contém frequências de batidas binaurais, daí o termo em inglês,  que ajuda o indivíduo em diversos estados mentais. Ademais, afina-se a música (instrumentação) a fim de alcançar o estado cerebral associado a essa frequência.  
 Basicamente tem-se a música inteira trabalhando para o mesmo objetivo, selecionado pelo usuário. 
 
 O público alvo são pessoas que sofrem com depressão, ansiedade ou insônia. A intenção é, através do aplicativo, ser capaz de auxiliar pessoas a melhorar a qualidade do sono em momentos de insônia, relaxar diante de uma crise de ansiedade e alegrar em períodos de tristeza. 
