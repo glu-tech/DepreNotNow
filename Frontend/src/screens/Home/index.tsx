@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Title } from './styles';
 import { Card } from '../../components/Card';
 import ContainerScreen from '../../components/ContainerScreen';
@@ -7,6 +7,42 @@ import { useNavigation } from '@react-navigation/native';
 
 export function Home() {
   const navigation = useNavigation();
+
+  useEffect(() => {
+    async function saveUseDays() {
+      AsyncStorage.getItem('@deprenotnow:startUseAppDate').then(async (obj) => {
+        const date = new Date(obj || '').getTime();
+        const today = new Date().getTime();
+
+        let result = Math.floor(convertMsToDay(date - today));
+        
+        if(result > 0){
+          AsyncStorage.getItem('@deprenotnow:startUseApp').then(async (useDays) => {
+            if(!useDays){
+              await AsyncStorage.setItem('@deprenotnow:startUseApp', `${1}`);
+            }else{
+              await AsyncStorage.setItem('@deprenotnow:startUseApp', `${parseInt((useDays || '')) + 1}`);
+            }
+          });
+        } else {
+          AsyncStorage.getItem('@deprenotnow:startUseApp').then(async (useDays) => {
+            if(!useDays)
+              await AsyncStorage.setItem('@deprenotnow:startUseApp', `${1}`);
+          });
+        }
+      }).finally(async () => {
+        await AsyncStorage.setItem('@deprenotnow:startUseAppDate', `${new Date()}`);
+      });
+    }
+
+    saveUseDays();
+},[]);
+
+  function convertMsToDay(milliseconds: number) {
+    const dayInMs:number = 86400000;
+
+    return milliseconds / dayInMs;
+  }
 
   async function requestTypeBinaural(type:{name: string, value: string}){
       await AsyncStorage.setItem('@deprenotnow:typeBinaural', `${[type.name, type.value]}`).then(() => {

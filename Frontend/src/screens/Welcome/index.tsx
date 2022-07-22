@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Submit from '../../components/Button';
 import ContainerScreen from '../../components/ContainerScreen';
 import { InputName, LineDividerInput, QuestionLabel, Subtitle, Title, WelcomeImage } from './styles';
@@ -11,12 +11,24 @@ export function Welcome() {
   const navigation = useNavigation();
   const [name, setName] = useState<string>();
 
+  useEffect(() => {
+    const LoadStorageUsername = () => {
+      AsyncStorage.getItem('@deprenotnow:user').then((username) => {
+        if(username){
+          navigation.navigate('Home');
+        }
+      }); 
+    }
+
+    LoadStorageUsername();
+  },[]);
+
   async function handleConfirmation(){
     if (name === "" || name === undefined || name === null){
       return Alert.alert('Me diz como chamar você 😢');
     }
     try {
-      await AsyncStorage.setItem('@deprenotnow:user', `${name}`).then(() => {
+      AsyncStorage.setItem('@deprenotnow:user', `${name}`).then(() => {
         navigation.navigate('Home');
       });
       await api.post('user/name', { "username": name });

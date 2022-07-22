@@ -101,12 +101,85 @@ export function MusicPlayer() {
     }
   }, [audio]);
 
+  const setProfileRanking = (() => {
+    AsyncStorage.getItem('@deprenotnow:totalSessions').then(async (sessions) => {
+      if(!sessions) {
+        await AsyncStorage.setItem('@deprenotnow:totalSessions', `${1}`)
+      } else {
+        await AsyncStorage.setItem('@deprenotnow:totalSessions', `${parseInt(sessions) + 1}`)
+      }
+    });
+
+    AsyncStorage.getItem('@deprenotnow:hoursInApp').then(async (hours) => {
+      if(!hours) {
+        await AsyncStorage.setItem('@deprenotnow:hoursInApp', `${timeSound}`)
+      } else {
+        await AsyncStorage.setItem('@deprenotnow:hoursInApp', `${hours + timeSound}`)
+      }
+    });
+
+    bestSound();
+    longestSession();
+  });
+
+  const bestSound = (() => {
+    const binaural = typeBinauralSound?.split(",")[1] || '';
+    const background = typeBackgroundSound?.split(",")[1] || '';
+
+    saveBestSound(binaural.charAt(0).toUpperCase() + binaural.slice(1), 'Binaural');
+    saveBestSound(background.charAt(0).toUpperCase() + background.slice(1), 'Background');
+  });
+
+  const saveBestSound = ((key:string, type:string) => {
+    const keyItem = `@deprenotnow:best${type}${key}`;
+    AsyncStorage.getItem(keyItem).then(async (countBinaural) => {
+      if(!countBinaural) {
+        await AsyncStorage.setItem(keyItem, `${1}`)
+      } else {
+        await AsyncStorage.setItem(keyItem, `${countBinaural + 1}`)
+      }
+    });
+  });
+
+  const longestSession = (() => {
+    AsyncStorage.getItem('@deprenotnow:longestSessionDate').then(async (obj) => {
+      const date = new Date(obj || '').getTime();
+      const today = new Date().getTime();
+
+      let result = Math.floor(convertMsToDay(date - today));
+      
+      if(result > 0){
+        AsyncStorage.getItem('@deprenotnow:longestSession').then(async (sequenceDays) => {
+          if(!sequenceDays){
+            await AsyncStorage.setItem('@deprenotnow:longestSession', `${1}`);
+          }else{
+            await AsyncStorage.setItem('@deprenotnow:longestSession', `${parseInt((sequenceDays || '')) + 1}`);
+          }
+        });
+      } else {
+        AsyncStorage.getItem('@deprenotnow:longestSession').then(async (sequenceDays) => {
+          if(!sequenceDays)
+            await AsyncStorage.setItem('@deprenotnow:longestSession', `${1}`);
+        });
+      }
+    }).finally(async () => {
+      await AsyncStorage.setItem('@deprenotnow:longestSessionDate', `${new Date()}`);
+    });
+  });
+
+  const convertMsToDay = ((milliseconds: number) => {
+    const dayInMs:number = 86400000;
+
+    return milliseconds / dayInMs;
+  });
+
   const handlerFinish = (async () => {
     if (!audio) return;
     const status = await audio.getStatusAsync();
     if (status.isLoaded && time == 0){
       setPlaying(status.isPlaying);
       audio.stopAsync();
+      setProfileRanking();
       Alert.alert("Acabou!!! Vamos mais um som binaural?")
       navigation.navigate('Home');
     }

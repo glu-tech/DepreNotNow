@@ -23,6 +23,6 @@ export const IconSizes = {
   megaLarge: 35,
 };
 
-export const MaterialIcon = ({size, name, color}: IconProps) => (
-  <MIcon name={name} size={IconSizes[size]} color={color} />
+export const MaterialIcon = ({size, name, color, style}: IconProps) => (
+  <MIcon name={name} size={IconSizes[size]} color={color} style={style} />
 );

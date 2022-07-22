@@ -26,12 +26,7 @@ export function StackRoutes(){
 
     return (
         <Navigator screenOptions={{ headerShown: false }}>
-            { (userName == '' || userName == undefined || userName == 'undefined')
-            ?
             <Screen name="Welcome" component={Welcome} />
-            :
-            null
-            }
             <Screen name="Home" component={Home} />
             <Screen name="SelectionMusic" component={SelectionMusic} />
             <Screen name="SelectionTime" component={SelectionTime} />
