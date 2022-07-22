@@ -14,7 +14,9 @@ class AwsService():
     def load_audio(self, file):
         try:
             bucket, s3 = self.load_bucket()
-            return self.make_url(s3.resource('s3').Bucket(bucket).Object(file).key, bucket, 'sounds')
+            obj = list(s3.resource('s3').Bucket(bucket).objects.filter(Prefix=f'sounds/{file}'))[0].key.split('sounds/')[1]
+            
+            return self.make_url(obj, bucket, 'sounds')
         except:
             return ''
         
