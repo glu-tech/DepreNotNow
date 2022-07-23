@@ -8,8 +8,6 @@ from app import app
 url_base = "/api/core/user"
 content_type = "application/json"
 
-pygame.init()
-
 def test_capture_user_name_endpoint():
     username = "lucas"
     response = app.test_client().post(f'{url_base}/name/', data=json.dumps({

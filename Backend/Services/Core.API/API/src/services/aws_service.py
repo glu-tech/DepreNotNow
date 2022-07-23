@@ -33,6 +33,9 @@ class AwsService():
         return base_url
 
     def get_env_aws_key(self):
+        if(os.environ.get('CREATE_BINAURAL') == 'False'):      
+            return os.environ.get('AWSAccessKeyId'), os.environ.get('AWSSecretKey')
+
         filepath = f"{os.path.dirname(os.path.realpath('__file__'))}/.env.json"
         with open(filepath, "r") as file:
             content = file.read()
@@ -41,5 +44,3 @@ class AwsService():
         decoded_json = json.loads(content)
 
         return decoded_json["AWSAccessKeyId"], decoded_json["AWSSecretKey"]
-
-                
