@@ -2,9 +2,9 @@ name: CI - Backend Application
 
 on:
   push:
-    branches: [main]
+    branches: [Refact_CI_Process]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "Refact_CI_Process" ]
 
 permissions:
   contents: read
@@ -44,9 +44,8 @@ jobs:
       - name: Run unit and integration tests
         run: |
           export CREATE_BINAURAL=False
-          export AWSAccessKeyId=${{ secrets.AWS_Access.AWSACCESSKEYID }}
-          export AWSSecretKey=${{ secrets.AWS_Access.AWSSECRETKEY }}
           cd $GITHUB_WORKSPACE/Backend/Services/Core.API/API/src
+          echo '{ "AWSAccessKeyId": "${{ secrets.AWSACCESSKEYID }}", "AWSSecretKey": "${{ secrets.AWSSECRETKEY }}" }' > .env.json
           mkdir sounds
           mkdir reports
           python3 -m pytest
