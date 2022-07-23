@@ -2,9 +2,9 @@ name: CI - Backend Application
 
 on:
   push:
-    branches: [Refact_CI_Process]
+    branches: [main]
   pull_request:
-    branches: [ "Refact_CI_Process" ]
+    branches: [ "main" ]
 
 permissions:
   contents: read
