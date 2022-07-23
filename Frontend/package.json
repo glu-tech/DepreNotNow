@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.18.9",
-    "@types/react": "~18.0.15",
+    "@types/react": "~17.0.21",
     "@types/react-native": "~0.66.13",
     "@types/react-native-vector-icons": "^6.4.10",
     "@types/shell-quote": "^1.7.1",
