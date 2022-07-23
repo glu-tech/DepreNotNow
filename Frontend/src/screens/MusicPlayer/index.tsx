@@ -143,12 +143,12 @@ export function MusicPlayer() {
 
   const longestSession = (() => {
     AsyncStorage.getItem('@deprenotnow:longestSessionDate').then(async (obj) => {
-      const date = new Date(obj || '').getTime();
-      const today = new Date().getTime();
+      const date = Math.floor(convertMsToDay(new Date(obj || '').getTime()));
+      const today = Math.floor(convertMsToDay(new Date().getTime()));
 
-      let result = Math.floor(convertMsToDay(date - today));
+      let result = today - date;
       
-      if(result > 0){
+      if(result == 1){
         AsyncStorage.getItem('@deprenotnow:longestSession').then(async (sequenceDays) => {
           if(!sequenceDays){
             await AsyncStorage.setItem('@deprenotnow:longestSession', `${1}`);

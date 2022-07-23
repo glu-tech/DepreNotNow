@@ -9,34 +9,34 @@ export function Home() {
   const navigation = useNavigation();
 
   useEffect(() => {
-    async function saveUseDays() {
-      AsyncStorage.getItem('@deprenotnow:startUseAppDate').then(async (obj) => {
-        const date = new Date(obj || '').getTime();
-        const today = new Date().getTime();
-
-        let result = Math.floor(convertMsToDay(date - today));
-        
-        if(result > 0){
-          AsyncStorage.getItem('@deprenotnow:startUseApp').then(async (useDays) => {
-            if(!useDays){
-              await AsyncStorage.setItem('@deprenotnow:startUseApp', `${1}`);
-            }else{
-              await AsyncStorage.setItem('@deprenotnow:startUseApp', `${parseInt((useDays || '')) + 1}`);
-            }
-          });
-        } else {
-          AsyncStorage.getItem('@deprenotnow:startUseApp').then(async (useDays) => {
-            if(!useDays)
-              await AsyncStorage.setItem('@deprenotnow:startUseApp', `${1}`);
-          });
-        }
-      }).finally(async () => {
-        await AsyncStorage.setItem('@deprenotnow:startUseAppDate', `${new Date()}`);
-      });
-    }
-
     saveUseDays();
 },[]);
+
+  async function saveUseDays() {
+    AsyncStorage.getItem('@deprenotnow:startUseAppDate').then(async (obj) => {
+      const date = Math.floor(convertMsToDay(new Date(obj || '').getTime()));
+      const today = Math.floor(convertMsToDay(new Date().getTime()));
+      
+      let result = today - date;
+      
+      if(result > 0){
+        AsyncStorage.getItem('@deprenotnow:startUseApp').then(async (useDays) => {
+          if(!useDays){
+            await AsyncStorage.setItem('@deprenotnow:startUseApp', `${1}`);
+          }else{
+            await AsyncStorage.setItem('@deprenotnow:startUseApp', `${parseInt((useDays || '')) + 1}`);
+          }
+        });
+      } else {
+        AsyncStorage.getItem('@deprenotnow:startUseApp').then(async (useDays) => {
+          if(!useDays)
+            await AsyncStorage.setItem('@deprenotnow:startUseApp', `${1}`);
+        });
+      }
+    }).finally(async () => {
+      await AsyncStorage.setItem('@deprenotnow:startUseAppDate', `${new Date()}`);
+    });
+  }
 
   function convertMsToDay(milliseconds: number) {
     const dayInMs:number = 86400000;
