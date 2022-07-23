@@ -14,6 +14,10 @@ class AwsService():
     def load_audio(self, file):
         try:
             bucket, s3 = self.load_bucket()
+            
+            if(os.environ.get('CREATE_BINAURAL') == 'False'):      
+                return self.make_url(s3.resource('s3').Bucket(bucket).Object(file).key, bucket, 'sounds')
+
             obj = list(s3.resource('s3').Bucket(bucket).objects.filter(Prefix=f'sounds/{file}'))[0].key.split('sounds/')[1]
             
             return self.make_url(obj, bucket, 'sounds')
@@ -33,9 +37,6 @@ class AwsService():
         return base_url
 
     def get_env_aws_key(self):
-        if(os.environ.get('CREATE_BINAURAL') == 'False'):      
-            return os.environ.get('AWSAccessKeyId'), os.environ.get('AWSSecretKey')
-
         filepath = f"{os.path.dirname(os.path.realpath('__file__'))}/.env.json"
         with open(filepath, "r") as file:
             content = file.read()
