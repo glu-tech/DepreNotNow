@@ -27,7 +27,6 @@ def test_generate_sound_endpoint_without_set_time():
                                         'typeBackground': type_background
                                     }), content_type='application/json')
 
-    print(response.json)
     assert response.status_code == 404
     assert response.json["has_error"] == True
     assert len(response.json['errors']) > 0
