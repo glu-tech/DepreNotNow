@@ -76,7 +76,7 @@ class Startup:
 
     def make_sound_binaural_automatic(self):
         print("Inicialize creation binaural sound")
-        times = [5, 15, 30, 60, 120]
+        times = [5, 15, 30, 45, 60, 120]
         format = "wav"
         for time in times:
             time = time*60
