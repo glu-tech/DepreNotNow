@@ -15,7 +15,7 @@ export function Welcome() {
     const LoadStorageUsername = () => {
       AsyncStorage.getItem('@deprenotnow:user').then((username) => {
         if(username){
-          navigation.navigate('Home');
+          navigation.navigate('HowAreYou');
         }
       }); 
     }

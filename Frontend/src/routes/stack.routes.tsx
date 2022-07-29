@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import ConfirmationSound from "../screens/ConfirmationSound";
 import Help from "../screens/Help";
 import Home from "../screens/Home";
+import HowAreYou from "../screens/HowAreYou";
 import MusicPlayer from "../screens/MusicPlayer";
 import Profile from "../screens/Profile";
 import SelectionMusic from "../screens/SelectionMusic";
@@ -27,6 +28,7 @@ export function StackRoutes(){
     return (
         <Navigator screenOptions={{ headerShown: false }}>
             <Screen name="Welcome" component={Welcome} />
+            <Screen name="HowAreYou" component={HowAreYou} />
             <Screen name="Home" component={Home} />
             <Screen name="SelectionMusic" component={SelectionMusic} />
             <Screen name="SelectionTime" component={SelectionTime} />

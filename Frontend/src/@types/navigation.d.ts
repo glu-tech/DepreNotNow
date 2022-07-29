@@ -3,6 +3,7 @@ export declare global {
         interface RootParamList {
             Welcome: undefined;
             Home: undefined;
+            HowAreYou: undefined;
             SelectionMusic: undefined;
             SelectionTime: undefined;
             ConfirmationSound: undefined;
