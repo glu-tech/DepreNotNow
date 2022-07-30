@@ -4,6 +4,7 @@ import ContainerScreen from '../../components/ContainerScreen';
 import { ButtonFelling, ButtonNext, LabelFelling, Title } from './styles';
 import { MaterialIcon } from '../../components/Icon';
 import api from '../../services/api';
+import { RFValue } from 'react-native-responsive-fontsize';
 
 
 export function HowAreYou() {
@@ -22,31 +23,31 @@ export function HowAreYou() {
     <ContainerScreen visibleMenuBar={false} optionMenuSelected={[false, false, false]}>
     <Title>Como você está se sentindo?</Title>
 
-      <ButtonFelling onPress={() => handleGoToHome('sadness')} style={{ left: 32 }} >
+      <ButtonFelling onPress={() => handleGoToHome('sadness')} style={{ left: RFValue(10) }} >
         <LabelFelling>😭</LabelFelling>
       </ButtonFelling>
 
-      <ButtonFelling onPress={() => handleGoToHome('sadder')} style={{ left: 82 }} >
+      <ButtonFelling onPress={() => handleGoToHome('sadder')} style={{ left: RFValue(60) }} >
         <LabelFelling>😪</LabelFelling>
       </ButtonFelling>
 
-      <ButtonFelling onPress={() => handleGoToHome('sad')} style={{ left: 132 }} >
+      <ButtonFelling onPress={() => handleGoToHome('sad')} style={{ left: RFValue(110) }} >
         <LabelFelling>😕</LabelFelling>
       </ButtonFelling>
 
-      <ButtonFelling onPress={() => handleGoToHome('neutral')} style={{ left: 182 }} >
+      <ButtonFelling onPress={() => handleGoToHome('neutral')} style={{ left: RFValue(160) }} >
         <LabelFelling>😶</LabelFelling>
       </ButtonFelling>
 
-      <ButtonFelling onPress={() => handleGoToHome('happy')} style={{ left: 232 }} >
+      <ButtonFelling onPress={() => handleGoToHome('happy')} style={{ left: RFValue(210) }} >
         <LabelFelling>🙂</LabelFelling>
       </ButtonFelling>
 
-      <ButtonFelling onPress={() => handleGoToHome('happier')} style={{ left: 282 }} >
+      <ButtonFelling onPress={() => handleGoToHome('happier')} style={{ left: RFValue(260) }} >
         <LabelFelling>🙂</LabelFelling>
       </ButtonFelling>
 
-      <ButtonFelling onPress={() => handleGoToHome('happiest')} style={{ left: 332 }} >
+      <ButtonFelling onPress={() => handleGoToHome('happiest')} style={{ left: RFValue(310) }} >
         <LabelFelling>😀</LabelFelling>
       </ButtonFelling>
 
