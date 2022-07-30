@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleProp, TextStyle } from 'react-native';
+import { RFValue } from 'react-native-responsive-fontsize';
 import MIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 MIcon.loadFont();
@@ -16,11 +17,11 @@ export interface IconProps {
 }
 
 export const IconSizes = {
-  small: 13,
-  medium: 18,
-  large: 23,
-  extraLarge: 27,
-  megaLarge: 35,
+  small: RFValue(10),
+  medium: RFValue(15),
+  large: RFValue(20),
+  extraLarge: RFValue(24),
+  megaLarge: RFValue(32),
 };
 
 export const MaterialIcon = ({size, name, color, style}: IconProps) => (
