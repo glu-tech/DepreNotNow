@@ -3267,12 +3267,12 @@ expo-asset@~8.5.0:
     path-browserify "^1.0.0"
     url-parse "^1.5.9"
 
-expo-av@~11.2.3:
-  version "11.2.3"
-  resolved "https://registry.npmjs.org/expo-av/-/expo-av-11.2.3.tgz"
-  integrity sha512-ptTe96s33Ct0eOsOmNTvtaWFx4B0SDkQmDfPbiuX/C2afqbLQf8geEopw7BRO8ZZl7Qe3qBMH6YLHXKTkZkTyQ==
+expo-av@~12.0.4:
+  version "12.0.4"
+  resolved "https://registry.yarnpkg.com/expo-av/-/expo-av-12.0.4.tgz#00cf2da76c0c718a1d316f188247dee85ce512c2"
+  integrity sha512-wq3wx6J1aacZEPZce9TK1+o4YTAOWyb5cJ4CqfsgHcXeUdHyO3qbva/5uecigpEYlCxOlWYFhAz2T0dQ7nWSpQ==
   dependencies:
-    "@expo/config-plugins" "^4.0.14"
+    "@expo/config-plugins" "~5.0.0"
 
 expo-constants@~13.1.1:
   version "13.1.1"
@@ -5808,10 +5808,10 @@ react-native-web@0.17.7:
     normalize-css-color "^1.0.2"
     prop-types "^15.6.0"
 
-react-native@0.68.2:
-  version "0.68.2"
-  resolved "https://registry.npmjs.org/react-native/-/react-native-0.68.2.tgz"
-  integrity sha512-qNMz+mdIirCEmlrhapAtAG+SWVx6MAiSfCbFNhfHqiqu1xw1OKXdzIrjaBEPihRC2pcORCoCHduHGQe/Pz9Yuw==
+react-native@0.68.3:
+  version "0.68.3"
+  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.68.3.tgz#07ac7374acde9bc5e80f9e473e03d6b730528f1c"
+  integrity sha512-LPgLQ4e96NWCrJPKlXzKfvlg1ddhfUplsEg00/cfBIMFZPJn2inzo9Rym8I/JYjmRORe4GjGY8kOem72hPm0Lw==
   dependencies:
     "@jest/create-cache-key-function" "^27.0.1"
     "@react-native-community/cli" "^7.0.3"
