@@ -1,21 +1,22 @@
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import styled from "styled-components/native";
 
 export const Container = styled.View`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0px;
-    gap: 4px;
+    padding: ${RFValue(0)}px;
+    gap: ${RFValue(4)}px;
     position: absolute;
-    width: 56px;
-    height: 56px;
-    top: 800px;
+    width: ${RFValue(48)}px;
+    height: ${RFValue(48)}px;
+    top: ${RFValue(690)}px;
 `;
 
 export const ButtonGrid = styled.TouchableOpacity`
-    width: 56px;
-    height: 32px;
-    border-radius: 100px;
+    width: ${RFValue(48)}px;
+    height: ${RFValue(28)}px;
+    border-radius: ${RFValue(90)}px;
     flex: none;
     order: 0;
     flex-grow: 0;
@@ -23,22 +24,22 @@ export const ButtonGrid = styled.TouchableOpacity`
 
 export const Box = styled.View`
     position: absolute;
-    left: 28.57%;
-    right: 28.57%;
-    top: 12.5%;
-    bottom: 12.5%;
+    left: ${RFPercentage(3.57)}%;
+    right: ${RFPercentage(3.57)}%;
+    top: ${RFPercentage(2)}%;
+    bottom: ${RFPercentage(2)}%;
 `;
 
 export const Label = styled.Text`
-    width: 56px;
-    height: 16px;
+    width: ${RFValue(50)}px;
+    height: ${RFValue(12)}px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
-    font-size: 12px;
-    line-height: 18px;
+    font-size: ${RFValue(10)}px;
+    line-height: ${RFValue(15)}px;
     text-align: center;
-    letter-spacing: 0.5px;
+    letter-spacing: ${RFValue(0.5)}px;
     color: #D8F0ED;
     flex: none;
     flex-grow: 0;
@@ -47,10 +48,10 @@ export const Label = styled.Text`
 export const PlayerIcon = styled.View`
     box-sizing: border-box;
     position: absolute;
-    left: 25%;
-    right: 25%;
-    top: 25%;
-    bottom: 25%;
-    border: 2px solid #D8F0ED;
-    border-radius: 100px;
+    left: ${RFPercentage(3.47)}%;
+    right: ${RFPercentage(3.47)}%;
+    top: ${RFPercentage(3.47)}%;
+    bottom: ${RFPercentage(3.47)}%;
+    border: ${RFValue(2)}px solid #D8F0ED;
+    border-radius: ${RFValue(100)}px;
 `;

@@ -2,6 +2,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Grid, SoundImage, Subhead, TitleContainer, TitleHead, EastCardGrid } from "./styles";
 import { MaterialIcon } from "../Icon";
 import { StyleProp, ViewStyle } from "react-native";
+import { RFValue } from "react-native-responsive-fontsize";
 
 const images = {
     happy: {
@@ -60,7 +61,7 @@ export function Card(props:props) {
 
     return (
         <Grid onPress={props.onPress} style={props.style}>
-            <LinearGradient start={{ x: 0.1, y: 0.2 }} colors={['#0D2A34', '#0A1422']} style={{ flex: 1, borderRadius: 16 }}>
+            <LinearGradient start={{ x: 0.1, y: 0.2 }} colors={['#0D2A34', '#0A1422']} style={{ flex: 1, borderRadius: RFValue(16) }}>
             <SoundImage source={sourceImg.uri} />
             <TitleContainer>
                 <TitleHead>{props.head}</TitleHead>

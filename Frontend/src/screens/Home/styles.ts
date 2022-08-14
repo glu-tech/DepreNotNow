@@ -1,15 +1,16 @@
+import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native'
 
 export const Title = styled.Text`
     position: absolute;
-    height: 32px;
-    left: 24px;
-    right: 31px;
-    bottom: 640px;
+    height: ${RFValue(28)}px;
+    left: ${RFValue(20)}px;
+    right: ${RFValue(28)}px;
+    bottom: ${RFValue(550)}px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
-    font-size: 22px;
-    line-height: 32px;
+    font-size: ${RFValue(19)}px;
+    line-height: ${RFValue(30)}px;
     color: #D8F0ED;
 `;

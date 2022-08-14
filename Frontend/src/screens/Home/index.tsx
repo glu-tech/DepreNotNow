@@ -4,6 +4,7 @@ import { Card } from '../../components/Card';
 import ContainerScreen from '../../components/ContainerScreen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
+import { RFValue } from 'react-native-responsive-fontsize';
 
 export function Home() {
   const navigation = useNavigation();
@@ -54,9 +55,9 @@ export function Home() {
     <ContainerScreen visibleMenuBar={true} optionMenuSelected={[true, false, false]}>
       <Title>O que vamos fazer hoje?</Title>
 
-      <Card onPress={() => requestTypeBinaural({name: 'Relaxar', value: 'calm'})} style={{ top: 182, left: 16, position: 'absolute' }} imgName={"relax"} head={"Relaxar"} subhead={"Você quer aliviar aquela crise de ansiedade?"} />
-      <Card onPress={() => requestTypeBinaural({name: 'Dormir', value: 'sleep'})} style={{ top: 372, left: 16, position: 'absolute' }} imgName={"sleep"} head={"Dormir"} subhead={"Você está sem conseguir dormir?"} />
-      <Card onPress={() => requestTypeBinaural({name: 'Alegrar', value: 'happy'})} style={{ top: 562, left: 16, position: 'absolute' }} imgName={"happy"} head={"Alegrar"} subhead={"Você está triste e precisa se animar?"} />
+      <Card onPress={() => requestTypeBinaural({name: 'Relaxar', value: 'calm'})} style={{ top: RFValue(158), left: RFValue(13), position: 'absolute' }} imgName={"relax"} head={"Relaxar"} subhead={"Você quer aliviar aquela crise de ansiedade?"} />
+      <Card onPress={() => requestTypeBinaural({name: 'Dormir', value: 'sleep'})} style={{ top: RFValue(320), left: RFValue(13), position: 'absolute' }} imgName={"sleep"} head={"Dormir"} subhead={"Você está sem conseguir dormir?"} />
+      <Card onPress={() => requestTypeBinaural({name: 'Alegrar', value: 'happy'})} style={{ top: RFValue(482), left: RFValue(13), position: 'absolute' }} imgName={"happy"} head={"Alegrar"} subhead={"Você está triste e precisa se animar?"} />
 
     </ContainerScreen>
   );
