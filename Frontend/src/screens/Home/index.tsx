@@ -56,8 +56,8 @@ export function Home() {
       <Title>O que vamos fazer hoje?</Title>
 
       <Card onPress={() => requestTypeBinaural({name: 'Relaxar', value: 'calm'})} style={{ top: RFValue(158), left: RFValue(13), position: 'absolute' }} imgName={"relax"} head={"Relaxar"} subhead={"Você quer aliviar aquela crise de ansiedade?"} />
-      <Card onPress={() => requestTypeBinaural({name: 'Dormir', value: 'sleep'})} style={{ top: RFValue(320), left: RFValue(13), position: 'absolute' }} imgName={"sleep"} head={"Dormir"} subhead={"Você está sem conseguir dormir?"} />
-      <Card onPress={() => requestTypeBinaural({name: 'Alegrar', value: 'happy'})} style={{ top: RFValue(482), left: RFValue(13), position: 'absolute' }} imgName={"happy"} head={"Alegrar"} subhead={"Você está triste e precisa se animar?"} />
+      <Card onPress={() => requestTypeBinaural({name: 'Dormir', value: 'sleep'})} style={{ top: RFValue(322), left: RFValue(13), position: 'absolute' }} imgName={"sleep"} head={"Dormir"} subhead={"Você está sem conseguir dormir?"} />
+      <Card onPress={() => requestTypeBinaural({name: 'Alegrar', value: 'happy'})} style={{ top: RFValue(486), left: RFValue(13), position: 'absolute' }} imgName={"happy"} head={"Alegrar"} subhead={"Você está triste e precisa se animar?"} />
 
     </ContainerScreen>
   );
