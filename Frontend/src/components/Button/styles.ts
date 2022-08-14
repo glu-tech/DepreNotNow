@@ -1,3 +1,4 @@
+import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native'
 
 export const SubmitName = styled.TouchableOpacity`
@@ -5,27 +6,27 @@ export const SubmitName = styled.TouchableOpacity`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px 24px;
-    gap: 10px;
+    padding: ${RFValue(10)}px ${RFValue(24)}px;
+    gap: ${RFValue(10)}px;
     position: absolute;
-    width: 312px;
-    height: 40px;
+    width: ${RFValue(269)}px;
+    height: ${RFValue(35)}px;
     background: #0A8967;
-    border-radius: 100px;
+    border-radius: ${RFValue(100)}px;
 `;
 
 export const SubmitLabel = styled.Text`
-    width: 100px;
-    height: 20px;
+    width: ${RFValue(100)}px;
+    height: ${RFValue(16)}px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 600;
-    font-size: 19px;
-    line-height: 23px;
+    font-size: ${RFValue(18)}px;
+    line-height: ${RFValue(20)}px;
     display: flex;
     align-items: center;
     text-align: center;
-    letter-spacing: 0.4px;
+    letter-spacing: ${RFValue(0.4)}px;
     color: #D8F0ED;
     flex: none;
     flex-grow: 0;

@@ -6,6 +6,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Alert } from 'react-native';
 import api from '../../services/api';
 import { useNavigation } from '@react-navigation/native';
+import { RFValue } from 'react-native-responsive-fontsize';
 
 export function Welcome() {
   const navigation = useNavigation();
@@ -49,7 +50,7 @@ export function Welcome() {
         <QuestionLabel>Como devemos te chamar?</QuestionLabel>
         <InputName autoFocus placeholderTextColor={"#d8f0ed99"} placeholder="João da Silva" onChangeText={handleInputChange} />
         <LineDividerInput />
-        <Submit label={"Continuar"} onPress={handleConfirmation} style={{ left:40, top: 710 }} /> 
+        <Submit label={"Continuar"} onPress={handleConfirmation} style={{ left: RFValue(35), top: RFValue(610) }} /> 
     </ContainerScreen>
   );
 }
