@@ -966,15 +966,15 @@
     mv "~2"
     safe-json-stringify "~1"
 
-"@expo/cli@0.2.9":
-  version "0.2.9"
-  resolved "https://registry.npmjs.org/@expo/cli/-/cli-0.2.9.tgz"
+"@expo/cli@0.2.11":
+  version "0.2.11"
+  resolved "https://registry.yarnpkg.com/@expo/cli/-/cli-0.2.11.tgz#25d8db8e46c6f02ef3edc189fdb6e29c922dd377"
   dependencies:
     "@babel/runtime" "^7.14.0"
     "@expo/code-signing-certificates" "^0.0.2"
     "@expo/config" "~7.0.1"
     "@expo/config-plugins" "~5.0.1"
-    "@expo/dev-server" "~0.1.110"
+    "@expo/dev-server" "~0.1.119"
     "@expo/devcert" "^1.0.0"
     "@expo/json-file" "^8.2.35"
     "@expo/metro-config" "~0.3.18"
@@ -1078,9 +1078,9 @@
     slugify "^1.3.4"
     sucrase "^3.20.0"
 
-"@expo/dev-server@~0.1.110":
+"@expo/dev-server@~0.1.119":
   version "0.1.119"
-  resolved "https://registry.npmjs.org/@expo/dev-server/-/dev-server-0.1.119.tgz"
+  resolved "https://registry.yarnpkg.com/@expo/dev-server/-/dev-server-0.1.119.tgz#d85036d8ddfd5668fd50ef373616b55580dc7670"
   dependencies:
     "@expo/bunyan" "4.0.0"
     "@expo/metro-config" "~0.3.18"
@@ -2790,9 +2790,9 @@ expo-av@~12.0.4:
   dependencies:
     "@expo/config-plugins" "~5.0.0"
 
-expo-constants@~13.2.2, expo-constants@~13.2.3:
-  version "13.2.3"
-  resolved "https://registry.npmjs.org/expo-constants/-/expo-constants-13.2.3.tgz"
+expo-constants@~13.2.2, expo-constants@~13.2.4:
+  version "13.2.4"
+  resolved "https://registry.yarnpkg.com/expo-constants/-/expo-constants-13.2.4.tgz#eab4a553f074b2c60ad7a158d3b82e3484a94606"
   dependencies:
     "@expo/config" "~7.0.0"
     uuid "^3.3.2"
@@ -2836,9 +2836,9 @@ expo-manifests@~0.3.0:
   dependencies:
     expo-json-utils "~0.3.0"
 
-expo-modules-autolinking@0.10.2:
-  version "0.10.2"
-  resolved "https://registry.npmjs.org/expo-modules-autolinking/-/expo-modules-autolinking-0.10.2.tgz"
+expo-modules-autolinking@0.10.3:
+  version "0.10.3"
+  resolved "https://registry.yarnpkg.com/expo-modules-autolinking/-/expo-modules-autolinking-0.10.3.tgz#31bfcf3e4b613a7c3949fb1f1e9c23eea4c14caf"
   dependencies:
     chalk "^4.1.0"
     commander "^7.2.0"
@@ -2846,9 +2846,9 @@ expo-modules-autolinking@0.10.2:
     find-up "^5.0.0"
     fs-extra "^9.1.0"
 
-expo-modules-core@0.11.3:
-  version "0.11.3"
-  resolved "https://registry.npmjs.org/expo-modules-core/-/expo-modules-core-0.11.3.tgz"
+expo-modules-core@0.11.4:
+  version "0.11.4"
+  resolved "https://registry.yarnpkg.com/expo-modules-core/-/expo-modules-core-0.11.4.tgz#6b7a27bb212f3fbf7d6803f747f6491aa73a2a09"
   dependencies:
     compare-versions "^3.4.0"
     invariant "^2.2.4"
@@ -2882,23 +2882,23 @@ expo-updates@~0.14.4:
     resolve-from "^5.0.0"
     uuid "^3.4.0"
 
-expo@~46.0.6:
-  version "46.0.7"
-  resolved "https://registry.npmjs.org/expo/-/expo-46.0.7.tgz"
+expo@~46.0.9:
+  version "46.0.9"
+  resolved "https://registry.yarnpkg.com/expo/-/expo-46.0.9.tgz#4b4b943343c45c3a05c71da49c1cfd5555ab5f85"
   dependencies:
     "@babel/runtime" "^7.14.0"
-    "@expo/cli" "0.2.9"
+    "@expo/cli" "0.2.11"
     "@expo/vector-icons" "^13.0.0"
     babel-preset-expo "~9.2.0"
     cross-spawn "^6.0.5"
     expo-application "~4.2.2"
     expo-asset "~8.6.1"
-    expo-constants "~13.2.3"
+    expo-constants "~13.2.4"
     expo-file-system "~14.1.0"
     expo-font "~10.2.0"
     expo-keep-awake "~10.2.0"
-    expo-modules-autolinking "0.10.2"
-    expo-modules-core "0.11.3"
+    expo-modules-autolinking "0.10.3"
+    expo-modules-core "0.11.4"
     fbemitter "^3.0.0"
     getenv "^1.0.0"
     invariant "^2.2.4"
