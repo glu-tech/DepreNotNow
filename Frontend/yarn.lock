@@ -2865,9 +2865,9 @@ expo-updates-interface@~0.7.0:
   version "0.7.0"
   resolved "https://registry.npmjs.org/expo-updates-interface/-/expo-updates-interface-0.7.0.tgz"
 
-expo-updates@~0.14.4:
-  version "0.14.4"
-  resolved "https://registry.npmjs.org/expo-updates/-/expo-updates-0.14.4.tgz"
+expo-updates@~0.14.5:
+  version "0.14.5"
+  resolved "https://registry.yarnpkg.com/expo-updates/-/expo-updates-0.14.5.tgz#3de2764b143c93eee636cab538c081a7867aa086"
   dependencies:
     "@expo/code-signing-certificates" "0.0.2"
     "@expo/config" "~7.0.1"
