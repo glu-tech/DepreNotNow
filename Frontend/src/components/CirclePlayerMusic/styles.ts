@@ -2,7 +2,6 @@ import styled from "styled-components/native";
 
 export const GridPlayer = styled.View`
     align-items: center;
-    left: 20px;
     top: 205px;
 `;
 
