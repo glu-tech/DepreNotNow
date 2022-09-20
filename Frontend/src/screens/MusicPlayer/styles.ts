@@ -18,7 +18,6 @@ export const BinauralTypeLabel = styled.Text`
     position: absolute;
     width: 297px;
     height: 30px;
-    left: 32px;
     top: 415px;
     font-family: 'Roboto';
     font-style: normal;
@@ -34,7 +33,6 @@ export const BackgroundTypeLabel = styled.Text`
     position: absolute;
     width: 297px;
     height: 20px;
-    left: 32px;
     top: 455px;
     font-family: 'Roboto';
     font-style: normal;
