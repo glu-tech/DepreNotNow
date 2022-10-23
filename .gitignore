@@ -1,6 +1,7 @@
 .vscode
 sounds
 .env*
+reports
 
 ### region react native
 # Logs
