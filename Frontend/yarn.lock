@@ -1143,19 +1143,6 @@
     json5 "^1.0.1"
     write-file-atomic "^2.3.0"
 
-"@expo/metro-config@~0.3.19":
-  version "0.3.22"
-  resolved "https://registry.npmjs.org/@expo/metro-config/-/metro-config-0.3.22.tgz"
-  dependencies:
-    "@expo/config" "7.0.1"
-    "@expo/json-file" "8.2.36"
-    chalk "^4.1.0"
-    debug "^4.3.2"
-    find-yarn-workspace-root "~2.0.0"
-    getenv "^1.0.0"
-    resolve-from "^5.0.0"
-    sucrase "^3.20.0"
-
 "@expo/metro-config@~0.4.0":
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/@expo/metro-config/-/metro-config-0.4.0.tgz#1b446c94020dce595aa9fc7610d92601a098b753"
@@ -2907,14 +2894,14 @@ expo-updates-interface@~0.7.0:
   version "0.7.0"
   resolved "https://registry.npmjs.org/expo-updates-interface/-/expo-updates-interface-0.7.0.tgz"
 
-expo-updates@~0.14.5:
-  version "0.14.5"
-  resolved "https://registry.yarnpkg.com/expo-updates/-/expo-updates-0.14.5.tgz#3de2764b143c93eee636cab538c081a7867aa086"
+expo-updates@~0.14.6:
+  version "0.14.6"
+  resolved "https://registry.yarnpkg.com/expo-updates/-/expo-updates-0.14.6.tgz#bf2318dd58f1c293c0f7e463a6f942e3ca511a79"
   dependencies:
     "@expo/code-signing-certificates" "0.0.2"
     "@expo/config" "~7.0.1"
     "@expo/config-plugins" "~5.0.1"
-    "@expo/metro-config" "~0.3.19"
+    "@expo/metro-config" "~0.4.0"
     arg "4.1.0"
     expo-eas-client "~0.3.0"
     expo-manifests "~0.3.0"
