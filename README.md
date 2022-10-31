@@ -4,7 +4,7 @@
 [![NPM](https://api.codeclimate.com/v1/badges/7dc798db81a62774f99b/maintainability)](https://codeclimate.com/github/glu-tech/DepreNotNow)
 [![NPM](https://camo.githubusercontent.com/2bbe4dbaee4e9d5713c8621cf4c91f4128105283dc1d656009c5aea3618f9110/68747470733a2f2f736e796b2e696f2f746573742f6769746875622f6477796c2f686170692d617574682d6a7774322f62616467652e7376673f74617267657446696c653d7061636b6167652e6a736f6e)](https://app.snyk.io/org/lucaslgu/project/0bd5c29f-59d9-470a-a09e-4224c2fce0fe)
 [![CI - Backend Application](https://github.com/glu-tech/DepreNotNow/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/glu-tech/DepreNotNow/actions/workflows/main.yml)
-
+ 
 ***
 
 [Wiki](https://github.com/glu-tech/DepreNotNow/wiki) | [Docs](https://artistic-tea-70d.notion.site/DepreNotNow-ccc60d95dcbe4e0793ad7270d72d438c)
